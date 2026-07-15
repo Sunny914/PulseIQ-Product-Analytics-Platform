@@ -378,25 +378,25 @@ This project demonstrates knowledge of:
 
 ## Executive Overview Dashboard
 
-![Executive Overview](presentations/executive_overview.jpg)
+![Executive Overview](presentations/Executive-Overview.jpg)
 
 ---
 
 ## Product Adoption Dashboard
 
-![Product Usage Dashboard](presentations/product_usage_adoption.jpg)
+![Product Usage Dashboard](presentations/Product-Usage-&-Adoption.jpg)
 
 ---
 
 ## Activation Time-To-Value Analytics Dashboard
 
-![Activation Dashboard](presentations/activation_time_to_value.jpg)
+![Activation Dashboard](presentations/Activation_&_Time-To-VAlue.jpg)
 
 ---
 
 ## Activation Funnel Dashboard
 
-![Activation Funnel Dashboard](presentations/activation_funnel_health_monitoring.jpg)
+![Activation Funnel Dashboard](presentations/Activation_Funnel_&_Health_Monitoring.jpg)
 ---
 
 # 🎯 Skills Demonstrated
