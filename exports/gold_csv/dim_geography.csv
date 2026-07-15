@@ -1,0 +1,8 @@
+CountryCode,CountryName,Region,Market,SalesRegion,Currency
+DE,Germany,DACH,Central Europe,Central Europe,EUR
+DK,Denmark,Nordics,Nordic,North Europe,DKK
+FR,France,Southern Europe,Southern Europe,South Europe,EUR
+NL,Netherlands,Benelux,Central Europe,Central Europe,EUR
+NO,Norway,Nordics,Nordic,North Europe,NOK
+SE,Sweden,Nordics,Nordic,North Europe,SEK
+UK,United Kingdom,UKI,UK,UK & Ireland,GBP

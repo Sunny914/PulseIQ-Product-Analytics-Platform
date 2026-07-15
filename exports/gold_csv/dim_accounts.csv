@@ -1,0 +1,121 @@
+AccountId,AccountName,Segment,Industry,EmployeeBand,AcquisitionChannel,CountryCode,CountryName,Region,Market,SalesRegion,LocalCurrency,AccountStatus,IsActiveAccount,HasTrial,CreatedAt,CreatedDate,TrialStartDate,TrialEndDate,AccountAgeDays,AccountAgeBucket,TrialLengthDays
+account_1,Euro Pulse Consulting AS,SMB,SaaS,20-49,PAID_SEARCH,UK,United Kingdom,UKI,UK,UK & Ireland,GBP,active,true,true,2026-02-08 20:28:06,2026-02-08,2026-02-08,2026-02-22,153,90-179 days,14
+account_10,Green Flow Systems,MID-MARKET,Technology Services,200-300,PARTNER,DK,Denmark,Nordics,Nordic,North Europe,DKK,active,true,true,2026-01-31 06:08:44,2026-01-31,2026-01-31,2026-02-14,161,90-179 days,14
+account_100,Green Craft Partners,SMB,,20-49,PARTNER,SE,Sweden,Nordics,Nordic,North Europe,SEK,active,true,true,2029-10-06 05:23:18,2029-10-06,2029-10-06,2029-10-20,0,future,14
+account_101,Cobalt Wave Networks AS,SMB,,50-99,SALES-LED,FR,France,Southern Europe,Southern Europe,South Europe,EUR,churned,false,true,2026-08-02 18:05:04,2026-08-02,2026-08-02,2026-08-16,0,future,14
+account_102,Vertex Pulse Industries SAS,SMB,SaaS,20-49,SALES-LED,NL,Netherlands,Benelux,Central Europe,Central Europe,EUR,ACTIVE,false,true,2027-10-20 12:04:52,2027-10-20,2027-10-20,2027-11-03,0,future,14
+account_103,Bright Peak Partners,SMB,Wholesale,50-99,PRODUCT-LED,DK,Denmark,Nordics,Nordic,North Europe,DKK,active,true,true,2026-01-03 10:19:21,2026-01-03,2026-01-03,2026-01-17,189,180+ days,14
+account_104,Euro Peak Systems,SMB,SaaS,20-49,PARTNER,FR,France,Southern Europe,Southern Europe,South Europe,EUR,churned,false,true,2026-03-09 15:04:51,2026-03-09,2026-03-09,2026-03-23,124,90-179 days,14
+account_105,Cobalt Works Solutions SAS,MID-MARKET,Wholesale,100-199,CONTENT,NO,Norway,Nordics,Nordic,North Europe,NOK,active,true,true,2028-04-28 04:52:04,2028-04-28,2028-04-28,2028-05-12,0,future,14
+account_106,Nordic Signal Services,MID-MARKET,Manufacturing,100-199,PARTNER,NO,Norway,Nordics,Nordic,North Europe,NOK,active,true,true,2029-12-20 22:35:32,2029-12-20,2029-12-20,2030-01-03,0,future,14
+account_107,Cobalt Wave Logistics,MID-MARKET,Logistics,200-300,SALES-LED,DK,Denmark,Nordics,Nordic,North Europe,DKK,active,true,true,2029-10-13 18:27:39,2029-10-13,2029-10-13,2029-10-27,0,future,14
+account_108,Cobalt Pulse Consulting GmbH,SMB,Logistics,20-49,PARTNER,NL,Netherlands,Benelux,Central Europe,Central Europe,EUR,active,true,true,2028-04-27 08:45:34,2028-04-27,2028-04-27,2028-05-11,0,future,14
+account_109,Apex Track Solutions,SMB,Wholesale,20-49,CONTENT,DE,Germany,DACH,Central Europe,Central Europe,EUR,churned,false,false,2028-09-20 09:08:37,2028-09-20,,,0,future,
+account_11,Bright Pulse Consulting,MID-MARKET,Professional Services,200-300,PARTNER,FR,France,Southern Europe,Southern Europe,South Europe,EUR,active,true,true,2029-04-04 16:22:37,2029-04-04,2029-04-04,2029-04-18,0,future,14
+account_110,Blue Wave Logistics,MID-MARKET,SaaS,200-300,PAID_SEARCH,NO,Norway,Nordics,Nordic,North Europe,NOK,active,true,true,2029-04-24 09:09:24,2029-04-24,2029-04-24,2029-05-08,0,future,14
+account_111,Bright Bridge Services,SMB,B2B Agency,20-49,CONTENT,UK,United Kingdom,UKI,UK,UK & Ireland,GBP,active,true,false,2027-01-23 18:11:48,2027-01-23,,,0,future,
+account_112,Euro Peak Logistics,SMB,Wholesale,20-49,CONTENT,DE,Germany,DACH,Central Europe,Central Europe,EUR,active,true,true,2026-07-10 12:15:16,2026-07-10,2026-07-10,2026-07-24,1,<30 days,14
+account_113,Green Wave Group,MID-MARKET,Technology Services,200-300,SALES-LED,UK,United Kingdom,UKI,UK,UK & Ireland,GBP,active,true,true,2029-05-17 23:08:45,2029-05-17,2029-05-17,2029-05-31,0,future,14
+account_114,Iron Bridge Solutions,SMB,Manufacturing,50-99,CONTENT,NO,Norway,Nordics,Nordic,North Europe,NOK,active,true,true,2027-04-26 11:11:37,2027-04-26,2027-04-26,2027-05-10,0,future,14
+account_115,Euro Track Solutions,SMB,B2B Agency,20-49,PRODUCT-LED,FR,France,Southern Europe,Southern Europe,South Europe,EUR,active,true,true,2028-09-20 21:14:47,2028-09-20,2028-09-20,2028-10-04,0,future,14
+account_116,Atlas Pulse Trading Ltd,MID-MARKET,Logistics,200-300,SALES-LED,NL,Netherlands,Benelux,Central Europe,Central Europe,EUR,active,true,true,2029-08-07 02:41:40,2029-08-07,2029-08-07,2029-08-21,0,future,14
+account_117,Nordic Pulse Services,MID-MARKET,SaaS,100-199,PRODUCT-LED,UK,United Kingdom,UKI,UK,UK & Ireland,GBP,active,true,false,2027-06-09 11:22:13,2027-06-09,,,0,future,
+account_118,Atlas Wave Partners,SMB,Technology Services,20-49,CONTENT,UK,United Kingdom,UKI,UK,UK & Ireland,GBP,active,true,true,2027-03-26 23:44:31,2027-03-26,2027-03-26,2027-04-09,0,future,14
+account_119,Apex Track Trading AB,MID-MARKET,Manufacturing,100-199,SALES-LED,SE,Sweden,Nordics,Nordic,North Europe,SEK,active,true,true,2029-08-31 06:29:29,2029-08-31,2029-08-31,2029-09-14,0,future,14
+account_12,Nordic Pulse Trading,SMB,SaaS,20-49,PARTNER,DE,Germany,DACH,Central Europe,Central Europe,EUR,active,true,false,2027-11-12 13:33:17,2027-11-12,,,0,future,
+account_120,Iron Peak Systems,MID-MARKET,Professional Services,100-199,PARTNER,DK,Denmark,Nordics,Nordic,North Europe,DKK,active,true,true,2029-09-04 10:21:48,2029-09-04,2029-09-04,2029-09-18,0,future,14
+account_13,Iron Pulse Industries,SMB,B2B Agency,50-99,SALES-LED,NO,Norway,Nordics,Nordic,North Europe,NOK,active,true,true,2026-04-21 01:45:12,2026-04-21,2026-04-21,2026-05-05,81,30-89 days,14
+account_14,Nordic Craft Logistics,MID-MARKET,Wholesale,100-199,PRODUCT-LED,DK,Denmark,Nordics,Nordic,North Europe,DKK,active,true,true,2027-10-01 15:00:13,2027-10-01,2027-10-01,2027-10-15,0,future,14
+account_15,Euro Flow Trading,SMB,Technology Services,50-99,PAID_SEARCH,SE,Sweden,Nordics,Nordic,North Europe,SEK,churned,false,true,2027-12-20 16:01:28,2027-12-20,2027-12-20,2028-01-03,0,future,14
+account_16,Atlas Wave Services,SMB,SaaS,20-49,CONTENT,DE,Germany,DACH,Central Europe,Central Europe,EUR,churned,false,false,2026-11-29 01:04:36,2026-11-29,,,0,future,
+account_17,Nordic Flow Networks,MID-MARKET,SaaS,100-199,PARTNER,SE,Sweden,Nordics,Nordic,North Europe,SEK,active,true,true,2027-04-06 22:04:10,2027-04-06,2027-04-06,2027-04-20,0,future,14
+account_18,Green Pulse Networks AS,SMB,SaaS,20-49,PAID_SEARCH,FR,France,Southern Europe,Southern Europe,South Europe,EUR,active,true,true,2026-04-17 10:39:37,2026-04-17,2026-04-17,2026-05-01,85,30-89 days,14
+account_19,Euro Flow Industries,SMB,Manufacturing,50-99,PARTNER,SE,Sweden,Nordics,Nordic,North Europe,SEK,active,true,true,2027-01-06 18:51:26,2027-01-06,2027-01-06,2027-01-20,0,future,14
+account_2,Vertex Peak Services SAS,MID-MARKET,SaaS,100-199,SALES-LED,UK,United Kingdom,UKI,UK,UK & Ireland,GBP,active,true,true,2027-10-14 16:49:57,2027-10-14,2027-10-14,2027-10-28,0,future,14
+account_20,Atlas Pulse Trading SAS,SMB,Manufacturing,20-49,PAID_SEARCH,SE,Sweden,Nordics,Nordic,North Europe,SEK,active,true,true,2029-09-30 08:59:48,2029-09-30,2029-09-30,2029-10-14,0,future,14
+account_21,Apex Signal Services,SMB,B2B Agency,20-49,SALES-LED,DK,Denmark,Nordics,Nordic,North Europe,DKK,active,true,true,2029-10-14 02:53:38,2029-10-14,2029-10-14,2029-10-28,0,future,14
+account_22,Cobalt Track Consulting,SMB,Logistics,50-99,SALES-LED,FR,France,Southern Europe,Southern Europe,South Europe,EUR,active,true,true,2026-03-10 11:40:25,2026-03-10,2026-03-10,2026-03-24,123,90-179 days,14
+account_23,Apex Signal Systems,SMB,Logistics,20-49,PRODUCT-LED,NO,Norway,Nordics,Nordic,North Europe,NOK,active,true,true,2028-06-23 21:31:50,2028-06-23,2028-06-23,2028-07-07,0,future,14
+account_24,Vertex Flow Solutions,MID-MARKET,Technology Services,200-300,SALES-LED,UK,United Kingdom,UKI,UK,UK & Ireland,GBP,cancelled,false,false,2029-12-09 02:58:36,2029-12-09,,,0,future,
+account_25,Green Signal Industries,SMB,SaaS,50-99,CONTENT,FR,France,Southern Europe,Southern Europe,South Europe,EUR,active,true,true,2027-02-19 11:14:16,2027-02-19,2027-02-19,2027-03-05,0,future,14
+account_26,Vertex Track Logistics,SMB,Wholesale,20-49,PAID_SEARCH,DE,Germany,DACH,Central Europe,Central Europe,EUR,churned,false,false,2027-03-09 19:04:29,2027-03-09,,,0,future,
+account_27,Bright Bridge Consulting,MID-MARKET,Manufacturing,100-199,PAID_SEARCH,DK,Denmark,Nordics,Nordic,North Europe,DKK,active,true,true,2026-06-18 09:32:23,2026-06-18,2026-06-18,2026-07-02,23,<30 days,14
+account_28,Euro Peak Networks,MID-MARKET,Logistics,100-199,CONTENT,FR,France,Southern Europe,Southern Europe,South Europe,EUR,active,true,true,2028-12-02 23:53:25,2028-12-02,2028-12-02,2028-12-16,0,future,14
+account_29,Blue Pulse Networks,SMB,Wholesale,20-49,CONTENT, DE ,,,,,,active,true,true,2027-09-18 02:34:25,2027-09-18,2027-09-18,2027-10-02,0,future,14
+account_3,Bright Link Networks,SMB,Manufacturing,20-49,PRODUCT-LED,NL,Netherlands,Benelux,Central Europe,Central Europe,EUR,active,true,true,2029-06-07 19:55:23,2029-06-07,2029-06-07,2029-06-21,0,future,14
+account_30,Euro Link Trading,SMB,Technology Services,50-99,SALES-LED,NL,Netherlands,Benelux,Central Europe,Central Europe,EUR,active,true,true,2027-12-24 08:00:58,2027-12-24,2027-12-24,2028-01-07,0,future,14
+account_31,Euro Wave Consulting,SMB,Manufacturing,20-49,PAID_SEARCH,DK,Denmark,Nordics,Nordic,North Europe,DKK,active,true,true,2029-06-06 22:50:39,2029-06-06,2029-06-06,2029-06-20,0,future,14
+account_32,Blue Track Industries AB,SMB,Manufacturing,20-49,SALES-LED,SE,Sweden,Nordics,Nordic,North Europe,SEK,active,true,true,2029-10-18 16:46:13,2029-10-18,2029-10-18,2029-11-01,0,future,14
+account_33,Vertex Track Industries,SMB,Technology Services,50-99,PAID_SEARCH,NL,Netherlands,Benelux,Central Europe,Central Europe,EUR,active,true,true,2028-07-14 00:04:17,2028-07-14,2028-07-14,2028-07-28,0,future,14
+account_34,Atlas Signal Services,SMB,Manufacturing,20-49,PRODUCT-LED,UK,United Kingdom,UKI,UK,UK & Ireland,GBP,active,true,true,2029-04-04 15:36:12,2029-04-04,2029-04-04,2029-04-18,0,future,14
+account_35,Vertex Craft Networks,SMB,,50-99,SALES-LED,SE,Sweden,Nordics,Nordic,North Europe,SEK,active,true,true,2026-04-10 18:37:30,2026-04-10,2026-04-10,2026-04-24,92,90-179 days,14
+account_36,Iron Signal Industries,MID-MARKET,B2B Agency,100-199,PAID_SEARCH, DK ,,,,,,cancelled,false,true,2029-03-16 11:35:19,2029-03-16,2029-03-16,2029-03-30,0,future,14
+account_37,Iron Pulse Group GmbH,SMB,SaaS,50-99,CONTENT,UK,United Kingdom,UKI,UK,UK & Ireland,GBP,active,true,true,2029-07-29 16:19:20,2029-07-29,2029-07-29,2029-08-12,0,future,14
+account_38,Atlas Bridge Industries BV,SMB,Technology Services,20-49,CONTENT,SE,Sweden,Nordics,Nordic,North Europe,SEK,cancelled,false,true,2027-05-23 17:41:41,2027-05-23,2027-05-23,2027-06-06,0,future,14
+account_39,Green Works Industries,MID-MARKET,B2B Agency,100-199,SALES-LED,UK,United Kingdom,UKI,UK,UK & Ireland,GBP,active,true,true,2029-03-17 15:51:07,2029-03-17,2029-03-17,2029-03-31,0,future,14
+account_4,Blue Peak Logistics,SMB,Manufacturing,50-99,PARTNER,FR,France,Southern Europe,Southern Europe,South Europe,EUR,cancelled,false,false,2026-05-04 22:51:37,2026-05-04,,,68,30-89 days,
+account_40,Euro Pulse Group,MID-MARKET,Professional Services,100-199,PARTNER,SE,Sweden,Nordics,Nordic,North Europe,SEK,active,true,false,2028-08-01 07:49:38,2028-08-01,,,0,future,
+account_41,Iron Bridge Networks,SMB,Technology Services,20-49,PARTNER,SE,Sweden,Nordics,Nordic,North Europe,SEK,active,true,true,2028-07-08 19:00:29,2028-07-08,2028-07-08,2028-07-22,0,future,14
+account_42,Blue Craft Solutions,SMB,Logistics,50-99,CONTENT,DK,Denmark,Nordics,Nordic,North Europe,DKK,active,true,true,2029-08-12 18:28:30,2029-08-12,2029-08-12,2029-08-26,0,future,14
+account_43,Atlas Wave Systems,SMB,Professional Services,20-49,PRODUCT-LED,DE,Germany,DACH,Central Europe,Central Europe,EUR,active,true,false,2027-11-08 15:23:38,2027-11-08,,,0,future,
+account_44,Bright Flow Trading,SMB,B2B Agency,20-49,PARTNER,DK,Denmark,Nordics,Nordic,North Europe,DKK,cancelled,false,true,2028-01-28 09:10:44,2028-01-28,2028-01-28,2028-02-11,0,future,14
+account_45,Vertex Signal Services,SMB,Logistics,20-49,SALES-LED,UK,United Kingdom,UKI,UK,UK & Ireland,GBP,active,true,true,2028-09-30 09:00:19,2028-09-30,2028-09-30,2028-10-14,0,future,14
+account_46,Apex Bridge Trading,SMB,SaaS,20-49,SALES-LED,NL,Netherlands,Benelux,Central Europe,Central Europe,EUR,active,true,true,2027-07-01 12:26:49,2027-07-01,2027-07-01,2027-07-15,0,future,14
+account_47,Blue Link Group,SMB,Professional Services,20-49,PARTNER,NL,Netherlands,Benelux,Central Europe,Central Europe,EUR,active,true,true,2028-07-16 01:58:17,2028-07-16,2028-07-16,2028-07-30,0,future,14
+account_48,Blue Flow Services,SMB,Manufacturing,50-99,PARTNER,SE,Sweden,Nordics,Nordic,North Europe,SEK,active,true,false,2026-06-09 08:44:40,2026-06-09,,,32,30-89 days,
+account_49,Bright Craft Networks,SMB,Professional Services,20-49,PRODUCT-LED,UK,United Kingdom,UKI,UK,UK & Ireland,GBP,active,true,true,2026-08-24 16:47:34,2026-08-24,2026-08-24,2026-09-07,0,future,14
+account_5,Green Peak Group,SMB,Wholesale,20-49,PAID_SEARCH,SE,Sweden,Nordics,Nordic,North Europe,SEK,active,true,true,2029-02-06 15:49:02,2029-02-06,2029-02-06,2029-02-20,0,future,14
+account_50,Bright Craft Networks,SMB,Wholesale,50-99,PRODUCT-LED,DK,Denmark,Nordics,Nordic,North Europe,DKK,active,true,true,2027-10-29 03:56:06,2027-10-29,2027-10-29,2027-11-12,0,future,14
+account_51,Euro Signal Services,MID-MARKET,Wholesale,100-199,CONTENT,DE,Germany,DACH,Central Europe,Central Europe,EUR,active,true,true,2027-12-31 23:36:25,2027-12-31,2027-12-31,2028-01-14,0,future,14
+account_52,Atlas Pulse Networks,SMB,SaaS,20-49,SALES-LED,NL,Netherlands,Benelux,Central Europe,Central Europe,EUR,active,true,true,2028-10-03 01:34:21,2028-10-03,2028-10-03,2028-10-17,0,future,14
+account_53,Iron Link Group Ltd,SMB,Manufacturing,20-49,PARTNER,DK,Denmark,Nordics,Nordic,North Europe,DKK,active,true,true,2028-04-18 19:58:18,2028-04-18,2028-04-18,2028-05-02,0,future,14
+account_54,Atlas Works Networks,SMB,Wholesale,50-99,CONTENT,UK,United Kingdom,UKI,UK,UK & Ireland,GBP,active,true,true,2028-06-14 04:02:41,2028-06-14,2028-06-14,2028-06-28,0,future,14
+account_55,Bright Flow Industries ApS,SMB,Wholesale,50-99,CONTENT,DK,Denmark,Nordics,Nordic,North Europe,DKK,active,true,true,2029-08-25 10:36:27,2029-08-25,2029-08-25,2029-09-08,0,future,14
+account_56,Cobalt Flow Systems,SMB,Technology Services,50-99,CONTENT,NO,Norway,Nordics,Nordic,North Europe,NOK,active,true,true,2027-12-19 15:43:35,2027-12-19,2027-12-19,2028-01-02,0,future,14
+account_57,Euro Signal Partners,SMB,B2B Agency,50-99,CONTENT,NO,Norway,Nordics,Nordic,North Europe,NOK,active,true,true,2029-05-26 16:34:33,2029-05-26,2029-05-26,2029-06-09,0,future,14
+account_58,Vertex Signal Networks,SMB,B2B Agency,20-49,SALES-LED,NL,Netherlands,Benelux,Central Europe,Central Europe,EUR,churned,false,false,2027-10-08 10:36:09,2027-10-08,,,0,future,
+account_59,Iron Pulse Industries,SMB,Wholesale,20-49,PARTNER,DE,Germany,DACH,Central Europe,Central Europe,EUR,active,true,true,2029-12-22 07:18:16,2029-12-22,2029-12-22,2030-01-05,0,future,14
+account_6,Atlas Works Systems,MID-MARKET,Manufacturing,200-300,SALES-LED,NL,Netherlands,Benelux,Central Europe,Central Europe,EUR,active,true,true,2026-11-27 07:17:31,2026-11-27,2026-11-27,2026-12-11,0,future,14
+account_60,Green Craft Group,MID-MARKET,B2B Agency,100-199,CONTENT,DE,Germany,DACH,Central Europe,Central Europe,EUR,active,true,true,2029-12-20 03:15:10,2029-12-20,2029-12-20,2030-01-03,0,future,14
+account_61,Cobalt Bridge Trading,MID-MARKET,,200-300,PRODUCT-LED,FR,France,Southern Europe,Southern Europe,South Europe,EUR,active,true,false,2028-02-09 11:11:25,2028-02-09,,,0,future,
+account_62,Apex Track Consulting,MID-MARKET,Wholesale,100-199,PRODUCT-LED,NO,Norway,Nordics,Nordic,North Europe,NOK,active,true,false,2029-04-29 01:22:28,2029-04-29,,,0,future,
+account_63,Vertex Bridge Partners,MID-MARKET,Wholesale,200-300,PRODUCT-LED,NL,Netherlands,Benelux,Central Europe,Central Europe,EUR,churned,false,true,2026-12-31 16:52:08,2026-12-31,2026-12-31,2027-01-14,0,future,14
+account_64,Blue Works Partners,SMB,Wholesale,50-99,SALES-LED,DK,Denmark,Nordics,Nordic,North Europe,DKK,active,true,true,2027-08-06 07:05:19,2027-08-06,2027-08-06,2027-08-20,0,future,14
+account_65,Atlas Track Solutions ApS,SMB,Technology Services,20-49,CONTENT,SE,Sweden,Nordics,Nordic,North Europe,SEK,active,true,true,2028-09-17 22:48:30,2028-09-17,2028-09-17,2028-10-01,0,future,14
+account_66,Apex Pulse Services,SMB,Manufacturing,20-49,PAID_SEARCH,DE,Germany,DACH,Central Europe,Central Europe,EUR,cancelled,false,false,2026-11-06 11:20:52,2026-11-06,,,0,future,
+account_67,Iron Peak Systems,MID-MARKET,Logistics,200-300,SALES-LED,NL,Netherlands,Benelux,Central Europe,Central Europe,EUR,active,true,true,2029-11-15 14:15:38,2029-11-15,2029-11-15,2029-11-29,0,future,14
+account_68,Nordic Pulse Logistics,SMB,Technology Services,20-49,CONTENT,FR,France,Southern Europe,Southern Europe,South Europe,EUR,active,true,true,2028-09-02 22:47:13,2028-09-02,2028-09-02,2028-09-16,0,future,14
+account_69,Atlas Wave Services,MID-MARKET,Technology Services,200-300,SALES-LED,SE,Sweden,Nordics,Nordic,North Europe,SEK,active,true,false,2029-09-23 12:49:09,2029-09-23,,,0,future,
+account_7,Blue Craft Networks GmbH,SMB,SaaS,20-49,SALES-LED,DK,Denmark,Nordics,Nordic,North Europe,DKK,active,true,true,2026-08-03 21:22:52,2026-08-03,2026-08-03,2026-08-17,0,future,14
+account_70,Bright Bridge Industries,MID-MARKET,SaaS,100-199,PARTNER,SE,Sweden,Nordics,Nordic,North Europe,SEK,active,true,false,2029-08-06 19:38:22,2029-08-06,,,0,future,
+account_71,Iron Signal Partners,MID-MARKET,B2B Agency,200-300,PARTNER,DK,Denmark,Nordics,Nordic,North Europe,DKK,active,true,true,2028-11-14 07:43:49,2028-11-14,2028-11-14,2028-11-28,0,future,14
+account_72,Vertex Wave Logistics,SMB,B2B Agency,20-49,SALES-LED,NO,Norway,Nordics,Nordic,North Europe,NOK,active,true,false,2027-04-18 19:32:02,2027-04-18,,,0,future,
+account_73,Apex Signal Industries,SMB,Logistics,50-99,PRODUCT-LED,SE,Sweden,Nordics,Nordic,North Europe,SEK,active,true,true,2028-10-14 09:15:29,2028-10-14,2028-10-14,2028-10-28,0,future,14
+account_74,Euro Signal Networks,SMB,Technology Services,20-49,CONTENT,UK,United Kingdom,UKI,UK,UK & Ireland,GBP,active,true,true,2026-04-05 01:28:15,2026-04-05,2026-04-05,2026-04-19,97,90-179 days,14
+account_75,Apex Works Networks SAS,SMB,Technology Services,20-49,SALES-LED,SE,Sweden,Nordics,Nordic,North Europe,SEK,active,true,true,2029-07-13 01:51:04,2029-07-13,2029-07-13,2029-07-27,0,future,14
+account_76,Blue Link Group GmbH,SMB,Logistics,20-49,PRODUCT-LED,NO,Norway,Nordics,Nordic,North Europe,NOK,cancelled,false,true,2026-07-24 17:58:50,2026-07-24,2026-07-24,2026-08-07,0,future,14
+account_77,Atlas Wave Group GmbH,SMB,Wholesale,50-99,PAID_SEARCH,NL,Netherlands,Benelux,Central Europe,Central Europe,EUR,active,true,true,2026-06-19 09:49:41,2026-06-19,2026-06-19,2026-07-03,22,<30 days,14
+account_78,Iron Track Logistics,SMB,Logistics,20-49,PAID_SEARCH,DE,Germany,DACH,Central Europe,Central Europe,EUR,active,true,true,2029-10-28 23:05:42,2029-10-28,2029-10-28,2029-11-11,0,future,14
+account_79,Vertex Wave Systems,SMB,Technology Services,50-99,SALES-LED,FR,France,Southern Europe,Southern Europe,South Europe,EUR,cancelled,false,true,2029-08-17 18:25:03,2029-08-17,2029-08-17,2029-08-31,0,future,14
+account_8,Atlas Craft Solutions,MID-MARKET,Logistics,100-199,PRODUCT-LED,NO,Norway,Nordics,Nordic,North Europe,NOK,active,true,false,2028-11-25 00:00:16,2028-11-25,,,0,future,
+account_80,Euro Craft Partners,SMB,SaaS,50-99,PRODUCT-LED,DK,Denmark,Nordics,Nordic,North Europe,DKK,active,true,false,2027-08-05 10:57:12,2027-08-05,,,0,future,
+account_81,Nordic Link Networks,MID-MARKET,Technology Services,100-199,CONTENT,NL,Netherlands,Benelux,Central Europe,Central Europe,EUR,active,true,true,2028-11-06 19:54:18,2028-11-06,2028-11-06,2028-11-20,0,future,14
+account_82,Vertex Track Networks,MID-MARKET,B2B Agency,100-199,SALES-LED,FR,France,Southern Europe,Southern Europe,South Europe,EUR,active,true,false,2027-06-28 21:11:44,2027-06-28,,,0,future,
+account_83,Iron Craft Partners Ltd,SMB,Professional Services,50-99,SALES-LED,SE,Sweden,Nordics,Nordic,North Europe,SEK,churned,false,true,2028-12-27 14:30:32,2028-12-27,2028-12-27,2029-01-10,0,future,14
+account_84,Euro Flow Solutions BV,MID-MARKET,B2B Agency,100-199,PAID_SEARCH,DE,Germany,DACH,Central Europe,Central Europe,EUR,active,true,true,2026-09-02 12:38:35,2026-09-02,2026-09-02,2026-09-16,0,future,14
+account_85,Atlas Pulse Industries,SMB,Manufacturing,20-49,PRODUCT-LED,NL,Netherlands,Benelux,Central Europe,Central Europe,EUR,active,true,true,2027-10-06 09:53:20,2027-10-06,2027-10-06,2027-10-20,0,future,14
+account_86,Cobalt Craft Solutions BV,SMB,SaaS,20-49,PRODUCT-LED,SE,Sweden,Nordics,Nordic,North Europe,SEK,active,true,true,2026-11-25 03:22:24,2026-11-25,2026-11-25,2026-12-09,0,future,14
+account_87,Iron Craft Networks,SMB,SaaS,50-99,PARTNER,NO,Norway,Nordics,Nordic,North Europe,NOK,active,true,true,2029-08-31 16:54:14,2029-08-31,2029-08-31,2029-09-14,0,future,14
+account_88,Green Craft Networks,SMB,Technology Services,20-49,PRODUCT-LED,SE,Sweden,Nordics,Nordic,North Europe,SEK,churned,false,false,2027-12-16 17:39:20,2027-12-16,,,0,future,
+account_89,Apex Works Systems ApS,SMB,Technology Services,50-99,PARTNER,FR,France,Southern Europe,Southern Europe,South Europe,EUR,active,true,true,2026-04-29 15:37:46,2026-04-29,2026-04-29,2026-05-13,73,30-89 days,14
+account_9,Atlas Craft Solutions,MID-MARKET,B2B Agency,100-199,PAID_SEARCH,SE,Sweden,Nordics,Nordic,North Europe,SEK,active,true,true,2029-11-18 17:13:55,2029-11-18,2029-11-18,2029-12-02,0,future,14
+account_90,Apex Peak Solutions,SMB,B2B Agency,50-99,PAID_SEARCH,SE,Sweden,Nordics,Nordic,North Europe,SEK,active,true,true,2027-12-22 17:25:26,2027-12-22,2027-12-22,2028-01-05,0,future,14
+account_91,Euro Bridge Networks,SMB,Technology Services,20-49,PARTNER,DK,Denmark,Nordics,Nordic,North Europe,DKK,active,true,true,2026-04-26 06:01:41,2026-04-26,2026-04-26,2026-05-10,76,30-89 days,14
+account_92,Blue Flow Industries SAS,SMB,Manufacturing,20-49,PAID_SEARCH,NO,Norway,Nordics,Nordic,North Europe,NOK,active,true,false,2029-11-13 03:50:19,2029-11-13,,,0,future,
+account_93,Vertex Peak Networks Ltd,SMB,Logistics,50-99,CONTENT,SE,Sweden,Nordics,Nordic,North Europe,SEK,active,true,true,2027-11-14 14:49:54,2027-11-14,2027-11-14,2027-11-28,0,future,14
+account_94,Euro Pulse Solutions,SMB,Professional Services,50-99,PARTNER,DK,Denmark,Nordics,Nordic,North Europe,DKK,churned,false,false,2029-01-29 06:44:46,2029-01-29,,,0,future,
+account_95,Euro Craft Trading,SMB,Professional Services,20-49,PAID_SEARCH,UK,United Kingdom,UKI,UK,UK & Ireland,GBP,active,true,true,2027-04-26 22:02:57,2027-04-26,2027-04-26,2027-05-10,0,future,14
+account_96,Bright Track Trading ApS,SMB,Technology Services,20-49,PRODUCT-LED,DE,Germany,DACH,Central Europe,Central Europe,EUR,active,true,false,2026-12-18 22:08:12,2026-12-18,,,0,future,
+account_97,Cobalt Pulse Services,SMB,Logistics,20-49,SALES-LED,SE,Sweden,Nordics,Nordic,North Europe,SEK,active,true,false,2029-06-10 19:20:09,2029-06-10,,,0,future,
+account_98,Atlas Craft Trading,MID-MARKET,Manufacturing,200-300,CONTENT,FR,France,Southern Europe,Southern Europe,South Europe,EUR,active,true,false,2029-11-05 06:36:21,2029-11-05,,,0,future,
+account_99,Euro Link Partners,MID-MARKET,Wholesale,200-300,PAID_SEARCH,DK,Denmark,Nordics,Nordic,North Europe,DKK,active,true,true,2028-09-23 00:53:13,2028-09-23,2028-09-23,2028-10-07,0,future,14
