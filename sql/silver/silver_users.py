@@ -1,94 +1,116 @@
-import duckdb
-import os
+import sys
+from pathlib import Path
 
-con = duckdb.connect(
-    os.path.join(
-        os.path.dirname(__file__),
-        "..",
-        "product_analytics_light.db"
-    )
-)
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+from as_of_date_sql import duckdb_date_literal
+from db_config import connect_duckdb, get_as_of_date
 
-con.execute("""
+AS_OF = duckdb_date_literal(get_as_of_date())
+
+con = connect_duckdb()
+
+con.execute(f"""
 CREATE OR REPLACE TABLE silver_users AS
 SELECT
 
-    user_id,
-    account_id,
+    u.user_id,
+    u.account_id,
 
     -- Core descriptors
-    full_name,
+    u.full_name,
     LOWER(
-        SPLIT_PART(email,'@',2)
+        SPLIT_PART(u.email, '@', 2)
     ) AS email_domain,
 
-    job_role,
-    user_status,
+    u.job_role,
+    u.user_status,
 
     -- Dates
-    created_at,
-    CAST(created_at AS DATE)
+    u.created_at,
+    CAST(u.created_at AS DATE)
         AS created_date,
 
-    last_seen_at,
+    u.last_seen_at,
 
-    -- Tenure
+    (CAST(u.created_at AS DATE) > {AS_OF}) AS is_future_created,
+
+    -- User tenure: days since user creation (not account creation)
     CASE
-        WHEN CAST(created_at AS DATE)
-             > CURRENT_DATE
-        THEN 0
+        WHEN CAST(u.created_at AS DATE) > {AS_OF}
+            THEN NULL
         ELSE DATE_DIFF(
             'day',
-            CAST(created_at AS DATE),
-            CURRENT_DATE
+            CAST(u.created_at AS DATE),
+            {AS_OF}
         )
     END AS user_tenure_days,
 
+    -- Account tenure: days since linked account creation
     CASE
-        WHEN last_seen_at IS NULL
-        THEN NULL
+        WHEN a.account_id IS NULL
+            THEN NULL
+        WHEN CAST(a.created_at AS DATE) > {AS_OF}
+            THEN NULL
         ELSE DATE_DIFF(
             'day',
-            CAST(last_seen_at AS DATE),
-            CURRENT_DATE
+            CAST(a.created_at AS DATE),
+            {AS_OF}
+        )
+    END AS account_tenure_days,
+
+    CASE
+        WHEN u.last_seen_at IS NULL
+            THEN NULL
+        WHEN CAST(u.last_seen_at AS DATE) > {AS_OF}
+            THEN NULL
+        ELSE DATE_DIFF(
+            'day',
+            CAST(u.last_seen_at AS DATE),
+            {AS_OF}
         )
     END AS days_since_last_seen,
 
     CASE
-        WHEN last_seen_at IS NULL
-        THEN NULL
-
+        WHEN u.last_seen_at IS NULL
+            THEN NULL
+        WHEN CAST(u.last_seen_at AS DATE) > {AS_OF}
+            THEN 'future_last_seen'
         WHEN DATE_DIFF(
             'day',
-            CAST(last_seen_at AS DATE),
-            CURRENT_DATE
+            CAST(u.last_seen_at AS DATE),
+            {AS_OF}
+        ) < 0
+            THEN NULL
+        WHEN DATE_DIFF(
+            'day',
+            CAST(u.last_seen_at AS DATE),
+            {AS_OF}
         ) < 7
-        THEN '<7 days'
-
+            THEN '<7 days'
         WHEN DATE_DIFF(
             'day',
-            CAST(last_seen_at AS DATE),
-            CURRENT_DATE
+            CAST(u.last_seen_at AS DATE),
+            {AS_OF}
         ) < 30
-        THEN '7-29 days'
-
+            THEN '7-29 days'
         WHEN DATE_DIFF(
             'day',
-            CAST(last_seen_at AS DATE),
-            CURRENT_DATE
+            CAST(u.last_seen_at AS DATE),
+            {AS_OF}
         ) < 90
-        THEN '30-89 days'
-
+            THEN '30-89 days'
         ELSE '90+ days'
     END AS recency_bucket,
 
     -- Flags
-    (user_status = 'active')
+    (u.user_status = 'active')
         AS is_active_user,
 
-    is_admin
+    u.is_admin
 
-FROM bronze_users
+FROM bronze_users u
+LEFT JOIN bronze_accounts a
+    ON u.account_id = a.account_id
 """)
 
 print("✅ Created silver_users")

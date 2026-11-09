@@ -1,0 +1,261 @@
+{
+  "run_id": "f3d54fa9b679",
+  "started_at": "2026-11-09T07:18:36.794958+00:00",
+  "ended_at": "2026-11-09T07:18:49.121252+00:00",
+  "status": "success",
+  "database_path": "C:\\Users\\sunny\\AppData\\Local\\Temp\\pytest-of-sunny\\pytest-273\\test_repeated_execution_idempo0\\repeat.duckdb",
+  "as_of_date": "2026-07-11",
+  "geography_mode": "derived-fixture",
+  "export_dir": "C:\\Users\\sunny\\AppData\\Local\\Temp\\pytest-of-sunny\\pytest-273\\test_repeated_execution_idempo0\\gold_csv",
+  "dry_run": false,
+  "stages": [
+    {
+      "stage_id": "validate_snapshot",
+      "status": "ok",
+      "duration_seconds": 0.3364935999852605,
+      "message": ""
+    },
+    {
+      "stage_id": "load_raw",
+      "status": "ok",
+      "duration_seconds": 0.6913064999971539,
+      "message": ""
+    },
+    {
+      "stage_id": "bronze_accounts",
+      "status": "ok",
+      "duration_seconds": 0.23928259999956936,
+      "message": ""
+    },
+    {
+      "stage_id": "bronze_users",
+      "status": "ok",
+      "duration_seconds": 0.2301667999709025,
+      "message": ""
+    },
+    {
+      "stage_id": "bronze_deals",
+      "status": "ok",
+      "duration_seconds": 0.29927749995840713,
+      "message": ""
+    },
+    {
+      "stage_id": "bronze_product_events",
+      "status": "ok",
+      "duration_seconds": 0.4887752999784425,
+      "message": ""
+    },
+    {
+      "stage_id": "geography",
+      "status": "ok",
+      "duration_seconds": 0.042118200042750686,
+      "message": ""
+    },
+    {
+      "stage_id": "silver_accounts",
+      "status": "ok",
+      "duration_seconds": 0.24423959996784106,
+      "message": ""
+    },
+    {
+      "stage_id": "silver_users",
+      "status": "ok",
+      "duration_seconds": 0.24151909997453913,
+      "message": ""
+    },
+    {
+      "stage_id": "silver_deals",
+      "status": "ok",
+      "duration_seconds": 0.324635999975726,
+      "message": ""
+    },
+    {
+      "stage_id": "silver_product_events",
+      "status": "ok",
+      "duration_seconds": 0.9726937999948859,
+      "message": ""
+    },
+    {
+      "stage_id": "gold_dim_accounts",
+      "status": "ok",
+      "duration_seconds": 0.3150145999970846,
+      "message": ""
+    },
+    {
+      "stage_id": "gold_dim_users",
+      "status": "ok",
+      "duration_seconds": 0.27258980000624433,
+      "message": ""
+    },
+    {
+      "stage_id": "gold_fact_deals",
+      "status": "ok",
+      "duration_seconds": 0.2619288000278175,
+      "message": ""
+    },
+    {
+      "stage_id": "gold_fact_product_events",
+      "status": "ok",
+      "duration_seconds": 0.7572595000383444,
+      "message": ""
+    },
+    {
+      "stage_id": "gold_fact_qualified_product_events",
+      "status": "ok",
+      "duration_seconds": 0.9160972000099719,
+      "message": ""
+    },
+    {
+      "stage_id": "gold_fact_engagement_periodic",
+      "status": "ok",
+      "duration_seconds": 0.3311225000070408,
+      "message": ""
+    },
+    {
+      "stage_id": "gold_fact_feature_adoption_account",
+      "status": "ok",
+      "duration_seconds": 0.29789639997761697,
+      "message": ""
+    },
+    {
+      "stage_id": "gold_fact_feature_adoption_user",
+      "status": "ok",
+      "duration_seconds": 0.26768989994889125,
+      "message": ""
+    },
+    {
+      "stage_id": "gold_fact_feature_adoption_by_period",
+      "status": "ok",
+      "duration_seconds": 0.2752633000491187,
+      "message": ""
+    },
+    {
+      "stage_id": "gold_fact_feature_breadth",
+      "status": "ok",
+      "duration_seconds": 0.3137065999908373,
+      "message": ""
+    },
+    {
+      "stage_id": "gold_fact_product_activity_recency",
+      "status": "ok",
+      "duration_seconds": 0.3396488999715075,
+      "message": ""
+    },
+    {
+      "stage_id": "gold_fact_retention_cohort",
+      "status": "ok",
+      "duration_seconds": 0.2719705000054091,
+      "message": ""
+    },
+    {
+      "stage_id": "gold_fact_account_workflow_funnel",
+      "status": "ok",
+      "duration_seconds": 0.25619089999236166,
+      "message": ""
+    },
+    {
+      "stage_id": "gold_fact_product_events_aggregated",
+      "status": "ok",
+      "duration_seconds": 0.5114488999824971,
+      "message": ""
+    },
+    {
+      "stage_id": "gold_fact_advanced_activation",
+      "status": "ok",
+      "duration_seconds": 0.3097481000004336,
+      "message": ""
+    },
+    {
+      "stage_id": "gold_fact_activation_as_of",
+      "status": "ok",
+      "duration_seconds": 0.232849600026384,
+      "message": ""
+    },
+    {
+      "stage_id": "gold_fact_segment_product_metrics",
+      "status": "ok",
+      "duration_seconds": 0.25623939995421097,
+      "message": ""
+    },
+    {
+      "stage_id": "gold_dim_geography",
+      "status": "ok",
+      "duration_seconds": 0.2326953000156209,
+      "message": ""
+    },
+    {
+      "stage_id": "export_gold_csv",
+      "status": "ok",
+      "duration_seconds": 0.8514605999807827,
+      "message": ""
+    },
+    {
+      "stage_id": "data_quality",
+      "status": "ok",
+      "duration_seconds": 0.04072829999495298,
+      "message": ""
+    },
+    {
+      "stage_id": "export_validate",
+      "status": "ok",
+      "duration_seconds": 0.8716028000344522,
+      "message": ""
+    }
+  ],
+  "row_counts": {
+    "raw__product_events": 61747,
+    "silver_product_events": 60552,
+    "gold_fact_product_events": 60552,
+    "gold_agg_event_count_sum": 60552
+  },
+  "dq": {
+    "passed": true,
+    "checks": {
+      "raw_product_events": 61747,
+      "bronze_product_events": 61747,
+      "silver_product_events": 60552,
+      "test_events_removed": 1195,
+      "gold_fact_product_events": 60552,
+      "aggregated_event_count_sum": 60552,
+      "attribution": {
+        "ENRICHED": 226,
+        "SOURCE_VERIFIED": 59911,
+        "QUARANTINED": 415
+      },
+      "activation_accounts": 120,
+      "activation_activated": 21,
+      "activation_mean_ttv": 9.904761904761905,
+      "asof_eligible": 15,
+      "asof_activated": 0
+    },
+    "errors": []
+  },
+  "export_validation": {
+    "passed": true,
+    "partial": false,
+    "files": [
+      "dim_accounts.csv",
+      "dim_geography.csv",
+      "dim_users.csv",
+      "fact_advanced_activation.csv",
+      "fact_activation_as_of.csv",
+      "fact_deals.csv",
+      "fact_product_events.csv",
+      "fact_product_events_aggregated.csv",
+      "fact_engagement_periodic.csv",
+      "fact_feature_adoption_account.csv",
+      "fact_feature_adoption_user.csv",
+      "fact_feature_adoption_by_period.csv",
+      "fact_feature_breadth_account.csv",
+      "fact_feature_breadth_user.csv",
+      "fact_product_activity_recency_account.csv",
+      "fact_product_activity_recency_user.csv",
+      "fact_qualified_product_events.csv",
+      "fact_retention_cohort.csv",
+      "fact_account_workflow_funnel.csv",
+      "fact_segment_product_metrics.csv"
+    ],
+    "errors": []
+  },
+  "failure": null
+}

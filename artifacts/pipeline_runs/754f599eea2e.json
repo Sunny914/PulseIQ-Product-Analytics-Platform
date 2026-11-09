@@ -1,0 +1,189 @@
+{
+  "run_id": "754f599eea2e",
+  "started_at": "2026-11-07T15:46:20.731361+00:00",
+  "ended_at": "2026-11-07T15:46:28.203373+00:00",
+  "status": "success",
+  "database_path": "C:\\Users\\sunny\\AppData\\Local\\Temp\\pytest-of-sunny\\pytest-267\\test_repeated_execution_idempo0\\repeat.duckdb",
+  "as_of_date": "2026-07-11",
+  "geography_mode": "derived-fixture",
+  "export_dir": "C:\\Users\\sunny\\AppData\\Local\\Temp\\pytest-of-sunny\\pytest-267\\test_repeated_execution_idempo0\\gold_csv",
+  "dry_run": false,
+  "stages": [
+    {
+      "stage_id": "validate_snapshot",
+      "status": "ok",
+      "duration_seconds": 0.34810429997742176,
+      "message": ""
+    },
+    {
+      "stage_id": "load_raw",
+      "status": "ok",
+      "duration_seconds": 0.5915571000077762,
+      "message": ""
+    },
+    {
+      "stage_id": "bronze_accounts",
+      "status": "ok",
+      "duration_seconds": 0.21560349996434525,
+      "message": ""
+    },
+    {
+      "stage_id": "bronze_users",
+      "status": "ok",
+      "duration_seconds": 0.19939719996182248,
+      "message": ""
+    },
+    {
+      "stage_id": "bronze_deals",
+      "status": "ok",
+      "duration_seconds": 0.3066986000048928,
+      "message": ""
+    },
+    {
+      "stage_id": "bronze_product_events",
+      "status": "ok",
+      "duration_seconds": 0.5398036999977194,
+      "message": ""
+    },
+    {
+      "stage_id": "geography",
+      "status": "ok",
+      "duration_seconds": 0.049759000015910715,
+      "message": ""
+    },
+    {
+      "stage_id": "silver_accounts",
+      "status": "ok",
+      "duration_seconds": 0.2111568000400439,
+      "message": ""
+    },
+    {
+      "stage_id": "silver_users",
+      "status": "ok",
+      "duration_seconds": 0.2173847999656573,
+      "message": ""
+    },
+    {
+      "stage_id": "silver_deals",
+      "status": "ok",
+      "duration_seconds": 0.2860005999682471,
+      "message": ""
+    },
+    {
+      "stage_id": "silver_product_events",
+      "status": "ok",
+      "duration_seconds": 1.0184550000121817,
+      "message": ""
+    },
+    {
+      "stage_id": "gold_dim_accounts",
+      "status": "ok",
+      "duration_seconds": 0.23950369999511167,
+      "message": ""
+    },
+    {
+      "stage_id": "gold_dim_users",
+      "status": "ok",
+      "duration_seconds": 0.24297040002420545,
+      "message": ""
+    },
+    {
+      "stage_id": "gold_fact_deals",
+      "status": "ok",
+      "duration_seconds": 0.232867700047791,
+      "message": ""
+    },
+    {
+      "stage_id": "gold_fact_product_events",
+      "status": "ok",
+      "duration_seconds": 0.6594967000419274,
+      "message": ""
+    },
+    {
+      "stage_id": "gold_fact_product_events_aggregated",
+      "status": "ok",
+      "duration_seconds": 0.5470837000175379,
+      "message": ""
+    },
+    {
+      "stage_id": "gold_fact_advanced_activation",
+      "status": "ok",
+      "duration_seconds": 0.21542760002193972,
+      "message": ""
+    },
+    {
+      "stage_id": "gold_fact_activation_as_of",
+      "status": "ok",
+      "duration_seconds": 0.2007304999860935,
+      "message": ""
+    },
+    {
+      "stage_id": "gold_dim_geography",
+      "status": "ok",
+      "duration_seconds": 0.18885619996581227,
+      "message": ""
+    },
+    {
+      "stage_id": "export_gold_csv",
+      "status": "ok",
+      "duration_seconds": 0.4164676000364125,
+      "message": ""
+    },
+    {
+      "stage_id": "data_quality",
+      "status": "ok",
+      "duration_seconds": 0.047474500024691224,
+      "message": ""
+    },
+    {
+      "stage_id": "export_validate",
+      "status": "ok",
+      "duration_seconds": 0.4591649000067264,
+      "message": ""
+    }
+  ],
+  "row_counts": {
+    "raw__product_events": 61747,
+    "silver_product_events": 60552,
+    "gold_fact_product_events": 60552,
+    "gold_agg_event_count_sum": 60552
+  },
+  "dq": {
+    "passed": true,
+    "checks": {
+      "raw_product_events": 61747,
+      "bronze_product_events": 61747,
+      "silver_product_events": 60552,
+      "test_events_removed": 1195,
+      "gold_fact_product_events": 60552,
+      "aggregated_event_count_sum": 60552,
+      "attribution": {
+        "SOURCE_VERIFIED": 59911,
+        "QUARANTINED": 415,
+        "ENRICHED": 226
+      },
+      "activation_accounts": 120,
+      "activation_activated": 21,
+      "activation_mean_ttv": 9.904761904761905,
+      "asof_eligible": 15,
+      "asof_activated": 0
+    },
+    "errors": []
+  },
+  "export_validation": {
+    "passed": true,
+    "partial": false,
+    "files": [
+      "dim_accounts.csv",
+      "dim_geography.csv",
+      "dim_users.csv",
+      "fact_advanced_activation.csv",
+      "fact_activation_as_of.csv",
+      "fact_deals.csv",
+      "fact_product_events.csv",
+      "fact_product_events_aggregated.csv"
+    ],
+    "errors": []
+  },
+  "failure": null
+}

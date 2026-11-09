@@ -1,5 +1,12 @@
-dim_date = 
-VAR TodayDate = TODAY()
+/*
+  PulseIQ reporting calendar (DAX calculated table template).
+
+  Reporting date constant — keep synchronized with PULSEIQ_AS_OF_DATE / sql/db_config.DEFAULT_AS_OF_DATE.
+  Future: replace with semantic-model parameter or configuration table.
+*/
+dim_date =
+VAR ReportAsOfDate = DATE ( 2026, 7, 11 )
+VAR TodayDate = ReportAsOfDate
 VAR StartDate = DATE( YEAR(TodayDate) - 2, MONTH(TodayDate), DAY(TodayDate) )
 VAR EndDate   = DATE( YEAR(TodayDate) + 1, MONTH(TodayDate), DAY(TodayDate) )
 
@@ -76,7 +83,7 @@ ADDCOLUMNS (
         VAR _minWkStart = StartDate - WEEKDAY ( StartDate, 2 ) + 1
         RETURN INT ( ( _wkStart - _minWkStart ) / 7 ) + 1,
 
-    /* Rolling month flags (anchored to TODAY) */
+    /* Rolling month flags (anchored to ReportAsOfDate) */
     "In Last 3 Months",
         VAR CurYM = YEAR ( [Date] ) * 12 + MONTH ( [Date] )
         RETURN CurYM >= ( MaxYM - 2 ) && CurYM <= MaxYM,
@@ -89,7 +96,7 @@ ADDCOLUMNS (
         VAR CurYM = YEAR ( [Date] ) * 12 + MONTH ( [Date] )
         RETURN CurYM >= ( MaxYM - 11 ) && CurYM <= MaxYM,
 
-    /* Period-to-date (anchored to TODAY) */
+    /* Period-to-date (anchored to ReportAsOfDate) */
     "In Month-to-Date (MTD)",
         YEAR ( [Date] ) = YEAR ( MaxDate )
             && MONTH ( [Date] ) = MONTH ( MaxDate )

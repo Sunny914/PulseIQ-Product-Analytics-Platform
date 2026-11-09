@@ -48,7 +48,7 @@ The `silver_accounts` table must:
 - normalize account name, country code, segment, and acquisition channel values
 - enrich accounts with geography fields from the geography lookup
 - convert `created_at` to `created_date`
-- compute `account_age_days` using the current date and account creation date
+- compute `account_age_days` using the reporting `as_of_date` and account creation date (default `2026-07-11`; override via `PULSEIQ_AS_OF_DATE`)
 - assign `account_age_bucket` with the following business thresholds:
   - `<30 days`
   - `30-89 days`
@@ -65,7 +65,8 @@ The `silver_users` table must:
 - preserve `user_id` and `account_id`
 - derive `email_domain` from the email address
 - convert `created_at` to `created_date`
-- compute `user_tenure_days` using account creation date and current date
+- compute `user_tenure_days` using **user** creation date and the reporting `as_of_date` (see `docs/date_and_tenure.md`)
+- compute `account_tenure_days` using **account** creation date and the reporting `as_of_date` (Gold: `AccountTenureDays`)
 - compute `days_since_last_seen` when `last_seen_at` is present
 - assign `recency_bucket` with the following business thresholds:
   - `<7 days`
@@ -84,7 +85,7 @@ The `silver_deals` table must:
 - identify `is_closed` when `closed_at` is present
 - identify `is_won` when the status is `won` or `closed_won`
 - compute `deal_cycle_days` when the deal is closed
-- compute `deal_age_days` using deal creation date and current date
+- compute `deal_age_days` for **open** deals using deal creation date and `as_of_date` (NULL when closed or future-created)
 
 ### FR5. Silver Product Event Standardization
 
@@ -134,14 +135,17 @@ The gold layer must produce the following fact tables:
 The `gold_fact_product_events_aggregated` table must summarize product events by:
 
 - `EventDate`
-- `EventName`
+- `EventNameNormalized` (canonical event name for reporting)
 - `EventCategory`
 - `AccountId`
 
 The aggregation must include:
 
-- total event count
-- distinct user count per event group
+- total event count (`EventCount`)
+- distinct user count per event group (`UniqueUsers`)
+- traceability to original source event strings (`SourceEventNames`)
+
+The detail fact `gold_fact_product_events` retains both `EventName` (source) and `EventNameNormalized`.
 
 ### FR10. Advanced Activation Requirement
 

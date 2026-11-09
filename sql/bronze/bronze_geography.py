@@ -1,14 +1,13 @@
-import duckdb
 import os
+import sys
+from pathlib import Path
+
 import pandas as pd
 
-con = duckdb.connect(
-    os.path.join(
-        os.path.dirname(__file__),
-        "..",
-        "product_analytics_light.db"
-    )
-)
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+from db_config import connect_duckdb
+
+con = connect_duckdb()
 
 # Read Excel file
 excel_path = os.path.join(

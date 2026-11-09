@@ -1,14 +1,10 @@
-import duckdb
-import os
+import sys
+from pathlib import Path
 
-con = duckdb.connect(
-    os.path.join(
-        os.path.dirname(__file__),
-        "..",
-        "..",
-        "product_analytics_light.db"
-    )
-)
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+from db_config import connect_duckdb
+
+con = connect_duckdb()
 
 con.execute("""
 CREATE OR REPLACE TABLE gold_fact_deals AS
@@ -40,6 +36,7 @@ SELECT
 
     is_closed               AS IsClosed,
     is_won                  AS IsWon,
+    is_future_created       AS IsFutureCreated,
 
     deal_cycle_days         AS DealCycleDays,
     deal_age_days           AS DealAgeDays

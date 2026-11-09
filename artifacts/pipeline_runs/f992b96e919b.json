@@ -1,0 +1,16 @@
+{
+  "run_id": "f992b96e919b",
+  "started_at": "2026-11-07T15:38:33.090838+00:00",
+  "ended_at": "2026-11-07T15:38:33.092985+00:00",
+  "status": "dry_run",
+  "database_path": "E:\\AI-ML ENGINEERING\\PORTFOLIO-PROJECTS\\PulseIQ\\artifacts\\pulseiq.duckdb",
+  "as_of_date": "2026-07-11",
+  "geography_mode": "derived-fixture",
+  "export_dir": "E:\\AI-ML ENGINEERING\\PORTFOLIO-PROJECTS\\PulseIQ\\artifacts\\gold_csv",
+  "dry_run": true,
+  "stages": [],
+  "row_counts": {},
+  "dq": {},
+  "export_validation": {},
+  "failure": null
+}

@@ -1,0 +1,16 @@
+{
+  "run_id": "e4bb705f7cf7",
+  "started_at": "2026-11-07T15:38:33.692947+00:00",
+  "ended_at": "2026-11-07T15:38:33.694713+00:00",
+  "status": "dry_run",
+  "database_path": "C:\\Users\\sunny\\AppData\\Local\\Temp\\pytest-of-sunny\\pytest-266\\test_reporting_date_cli_preced0\\t.duckdb",
+  "as_of_date": "2026-07-11",
+  "geography_mode": "derived-fixture",
+  "export_dir": "C:\\Users\\sunny\\AppData\\Local\\Temp\\pytest-of-sunny\\pytest-266\\test_reporting_date_cli_preced0\\csv",
+  "dry_run": true,
+  "stages": [],
+  "row_counts": {},
+  "dq": {},
+  "export_validation": {},
+  "failure": null
+}

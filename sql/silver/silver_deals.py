@@ -1,15 +1,16 @@
-import duckdb
-import os
+import sys
+from pathlib import Path
 
-con = duckdb.connect(
-    os.path.join(
-        os.path.dirname(__file__),
-        "..",
-        "product_analytics_light.db"
-    )
-)
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+from as_of_date_sql import duckdb_date_literal
+from db_config import connect_duckdb, get_as_of_date
 
-con.execute("""
+AS_OF = duckdb_date_literal(get_as_of_date())
+
+con = connect_duckdb()
+
+
+con.execute(f"""
 CREATE OR REPLACE TABLE silver_deals AS
 SELECT
 
@@ -46,6 +47,8 @@ SELECT
         ELSE FALSE
     END AS is_won,
 
+    (CAST(created_at AS DATE) > {AS_OF}) AS is_future_created,
+
     CASE
         WHEN closed_at IS NOT NULL
         THEN DATE_DIFF(
@@ -56,13 +59,16 @@ SELECT
         ELSE NULL
     END AS deal_cycle_days,
 
+    -- Open pipeline age only (NULL when closed or future-created)
     CASE
-        WHEN CAST(created_at AS DATE) > CURRENT_DATE
-        THEN 0
+        WHEN CAST(created_at AS DATE) > {AS_OF}
+            THEN NULL
+        WHEN closed_at IS NOT NULL
+            THEN NULL
         ELSE DATE_DIFF(
             'day',
             CAST(created_at AS DATE),
-            CURRENT_DATE
+            {AS_OF}
         )
     END AS deal_age_days
 

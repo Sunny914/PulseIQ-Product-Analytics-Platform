@@ -1,0 +1,233 @@
+{
+  "run_id": "58d92c41eb01",
+  "started_at": "2026-11-08T05:25:28.063687+00:00",
+  "ended_at": "2026-11-08T05:25:37.039108+00:00",
+  "status": "success",
+  "database_path": "C:\\Users\\sunny\\AppData\\Local\\Temp\\pytest-of-sunny\\pytest-269\\test_derived_fixture_mode_e2e0\\pulse.duckdb",
+  "as_of_date": "2026-07-11",
+  "geography_mode": "derived-fixture",
+  "export_dir": "C:\\Users\\sunny\\AppData\\Local\\Temp\\pytest-of-sunny\\pytest-269\\test_derived_fixture_mode_e2e0\\gold_csv",
+  "dry_run": false,
+  "stages": [
+    {
+      "stage_id": "validate_snapshot",
+      "status": "ok",
+      "duration_seconds": 0.30283260002033785,
+      "message": ""
+    },
+    {
+      "stage_id": "load_raw",
+      "status": "ok",
+      "duration_seconds": 0.6688447999767959,
+      "message": ""
+    },
+    {
+      "stage_id": "bronze_accounts",
+      "status": "ok",
+      "duration_seconds": 0.24150010000448674,
+      "message": ""
+    },
+    {
+      "stage_id": "bronze_users",
+      "status": "ok",
+      "duration_seconds": 0.2152374999714084,
+      "message": ""
+    },
+    {
+      "stage_id": "bronze_deals",
+      "status": "ok",
+      "duration_seconds": 0.22428369999397546,
+      "message": ""
+    },
+    {
+      "stage_id": "bronze_product_events",
+      "status": "ok",
+      "duration_seconds": 0.44830519997049123,
+      "message": ""
+    },
+    {
+      "stage_id": "geography",
+      "status": "ok",
+      "duration_seconds": 0.05251199996564537,
+      "message": ""
+    },
+    {
+      "stage_id": "silver_accounts",
+      "status": "ok",
+      "duration_seconds": 0.2741336000035517,
+      "message": ""
+    },
+    {
+      "stage_id": "silver_users",
+      "status": "ok",
+      "duration_seconds": 0.2167022000066936,
+      "message": ""
+    },
+    {
+      "stage_id": "silver_deals",
+      "status": "ok",
+      "duration_seconds": 0.23539059999166057,
+      "message": ""
+    },
+    {
+      "stage_id": "silver_product_events",
+      "status": "ok",
+      "duration_seconds": 0.8822059000376612,
+      "message": ""
+    },
+    {
+      "stage_id": "gold_dim_accounts",
+      "status": "ok",
+      "duration_seconds": 0.21654180000768974,
+      "message": ""
+    },
+    {
+      "stage_id": "gold_dim_users",
+      "status": "ok",
+      "duration_seconds": 0.20957359997555614,
+      "message": ""
+    },
+    {
+      "stage_id": "gold_fact_deals",
+      "status": "ok",
+      "duration_seconds": 0.230626399978064,
+      "message": ""
+    },
+    {
+      "stage_id": "gold_fact_product_events",
+      "status": "ok",
+      "duration_seconds": 0.7504494999884628,
+      "message": ""
+    },
+    {
+      "stage_id": "gold_fact_engagement_periodic",
+      "status": "ok",
+      "duration_seconds": 0.33024649997241795,
+      "message": ""
+    },
+    {
+      "stage_id": "gold_fact_feature_adoption_account",
+      "status": "ok",
+      "duration_seconds": 0.2597517999820411,
+      "message": ""
+    },
+    {
+      "stage_id": "gold_fact_feature_adoption_user",
+      "status": "ok",
+      "duration_seconds": 0.2785359999979846,
+      "message": ""
+    },
+    {
+      "stage_id": "gold_fact_feature_adoption_by_period",
+      "status": "ok",
+      "duration_seconds": 0.2862975000170991,
+      "message": ""
+    },
+    {
+      "stage_id": "gold_fact_feature_breadth",
+      "status": "ok",
+      "duration_seconds": 0.26080550003098324,
+      "message": ""
+    },
+    {
+      "stage_id": "gold_fact_product_activity_recency",
+      "status": "ok",
+      "duration_seconds": 0.24288769997656345,
+      "message": ""
+    },
+    {
+      "stage_id": "gold_fact_product_events_aggregated",
+      "status": "ok",
+      "duration_seconds": 0.4753779000020586,
+      "message": ""
+    },
+    {
+      "stage_id": "gold_fact_advanced_activation",
+      "status": "ok",
+      "duration_seconds": 0.2553048999980092,
+      "message": ""
+    },
+    {
+      "stage_id": "gold_fact_activation_as_of",
+      "status": "ok",
+      "duration_seconds": 0.24546710000140592,
+      "message": ""
+    },
+    {
+      "stage_id": "gold_dim_geography",
+      "status": "ok",
+      "duration_seconds": 0.20247079996624961,
+      "message": ""
+    },
+    {
+      "stage_id": "export_gold_csv",
+      "status": "ok",
+      "duration_seconds": 0.40361529996152967,
+      "message": ""
+    },
+    {
+      "stage_id": "data_quality",
+      "status": "ok",
+      "duration_seconds": 0.03496140002971515,
+      "message": ""
+    },
+    {
+      "stage_id": "export_validate",
+      "status": "ok",
+      "duration_seconds": 0.5023161999997683,
+      "message": ""
+    }
+  ],
+  "row_counts": {
+    "raw__product_events": 61747,
+    "silver_product_events": 60552,
+    "gold_fact_product_events": 60552,
+    "gold_agg_event_count_sum": 60552
+  },
+  "dq": {
+    "passed": true,
+    "checks": {
+      "raw_product_events": 61747,
+      "bronze_product_events": 61747,
+      "silver_product_events": 60552,
+      "test_events_removed": 1195,
+      "gold_fact_product_events": 60552,
+      "aggregated_event_count_sum": 60552,
+      "attribution": {
+        "SOURCE_VERIFIED": 59911,
+        "QUARANTINED": 415,
+        "ENRICHED": 226
+      },
+      "activation_accounts": 120,
+      "activation_activated": 21,
+      "activation_mean_ttv": 9.904761904761905,
+      "asof_eligible": 15,
+      "asof_activated": 0
+    },
+    "errors": []
+  },
+  "export_validation": {
+    "passed": true,
+    "partial": false,
+    "files": [
+      "dim_accounts.csv",
+      "dim_geography.csv",
+      "dim_users.csv",
+      "fact_advanced_activation.csv",
+      "fact_activation_as_of.csv",
+      "fact_deals.csv",
+      "fact_product_events.csv",
+      "fact_product_events_aggregated.csv",
+      "fact_engagement_periodic.csv",
+      "fact_feature_adoption_account.csv",
+      "fact_feature_adoption_user.csv",
+      "fact_feature_adoption_by_period.csv",
+      "fact_feature_breadth_account.csv",
+      "fact_feature_breadth_user.csv",
+      "fact_product_activity_recency_account.csv",
+      "fact_product_activity_recency_user.csv"
+    ],
+    "errors": []
+  },
+  "failure": null
+}

@@ -1,15 +1,15 @@
-import duckdb
-import os
+import sys
+from pathlib import Path
 
-con = duckdb.connect(
-    os.path.join(
-        os.path.dirname(__file__),
-        "..",
-        "product_analytics_light.db"
-    )
-)
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+from as_of_date_sql import duckdb_date_literal
+from db_config import connect_duckdb, get_as_of_date
 
-con.execute("""
+AS_OF = duckdb_date_literal(get_as_of_date())
+
+con = connect_duckdb()
+
+con.execute(f"""
 CREATE OR REPLACE TABLE silver_accounts AS
 SELECT
 
@@ -36,38 +36,41 @@ SELECT
     a.trial_start_date,
     a.trial_end_date,
 
-    -- Age metrics
+    (CAST(a.created_at AS DATE) > {AS_OF}) AS is_future_created,
+
+    -- Age metrics (reporting as-of {AS_OF})
     CASE
-        WHEN CAST(a.created_at AS DATE) > CURRENT_DATE THEN 0
+        WHEN CAST(a.created_at AS DATE) > {AS_OF}
+            THEN NULL
         ELSE DATE_DIFF(
             'day',
             CAST(a.created_at AS DATE),
-            CURRENT_DATE
+            {AS_OF}
         )
     END AS account_age_days,
 
     CASE
-        WHEN CAST(a.created_at AS DATE) > CURRENT_DATE
+        WHEN CAST(a.created_at AS DATE) > {AS_OF}
             THEN 'future'
 
         WHEN DATE_DIFF(
                 'day',
                 CAST(a.created_at AS DATE),
-                CURRENT_DATE
+                {AS_OF}
              ) < 30
             THEN '<30 days'
 
         WHEN DATE_DIFF(
                 'day',
                 CAST(a.created_at AS DATE),
-                CURRENT_DATE
+                {AS_OF}
              ) < 90
             THEN '30-89 days'
 
         WHEN DATE_DIFF(
                 'day',
                 CAST(a.created_at AS DATE),
-                CURRENT_DATE
+                {AS_OF}
              ) < 180
             THEN '90-179 days'
 

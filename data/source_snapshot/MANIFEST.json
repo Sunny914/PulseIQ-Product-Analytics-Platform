@@ -1,0 +1,284 @@
+{
+  "data_provenance": "Exported from PulseIQ authoritative DuckDB raw__* tables; synthetic B2B SaaS CRM portfolio dataset.",
+  "geography_limitation": {
+    "bronze_geography_rows_in_reference_db": 8,
+    "gold_dim_geography_rows_in_reference_db": 7,
+    "original_file_expected": "sql/data/raw_geography.xlsx",
+    "original_file_in_repository": false,
+    "raw__geography_present_in_source": false,
+    "reproducibility_note": "Geography is not included in this raw snapshot. Bronze geography must be restored from the missing Excel file or a separately documented reference export in a future workstream.",
+    "silver_geography_rows_in_reference_db": 7
+  },
+  "known_data_quality_issues": [
+    {
+      "count": 625,
+      "issue": "null_event_id",
+      "table": "raw__product_events"
+    },
+    {
+      "count": 653,
+      "issue": "null_account_id",
+      "table": "raw__product_events"
+    },
+    {
+      "duplicate_identifier_rows": 35,
+      "issue": "duplicate_deal_id_values",
+      "table": "raw__deals"
+    }
+  ],
+  "manifest_version": "1.0",
+  "snapshot_generated_at_utc": "2026-11-05T17:43:56+00:00",
+  "snapshot_identifier": "pulseiq-raw-v1",
+  "source_database": {
+    "absolute_path_at_export": "E:\\AI-ML ENGINEERING\\PORTFOLIO-PROJECTS\\PulseIQ\\product_analytics_light.db",
+    "snapshot_identifier": "pulseiq-raw-v1"
+  },
+  "tables": [
+    {
+      "business_identifiers": [
+        "account_id"
+      ],
+      "column_types": {
+        "account_id": "VARCHAR",
+        "account_name": "VARCHAR",
+        "account_status": "VARCHAR",
+        "acquisition_channel": "VARCHAR",
+        "city": "VARCHAR",
+        "country_code": "VARCHAR",
+        "created_at": "TIMESTAMP",
+        "employee_band": "VARCHAR",
+        "industry": "VARCHAR",
+        "segment": "VARCHAR",
+        "trial_end_date": "DATE",
+        "trial_start_date": "DATE"
+      },
+      "columns": [
+        "account_id",
+        "account_name",
+        "country_code",
+        "city",
+        "industry",
+        "employee_band",
+        "segment",
+        "created_at",
+        "trial_start_date",
+        "trial_end_date",
+        "account_status",
+        "acquisition_channel"
+      ],
+      "date_columns": [
+        "created_at",
+        "trial_start_date",
+        "trial_end_date"
+      ],
+      "duplicate_identifier_rows": 0,
+      "file_size_bytes": 6982,
+      "filename": "raw__accounts.parquet",
+      "null_counts": {
+        "account_id": 0,
+        "account_name": 0,
+        "account_status": 0,
+        "acquisition_channel": 0,
+        "city": 0,
+        "country_code": 0,
+        "created_at": 0,
+        "employee_band": 0,
+        "industry": 4,
+        "segment": 0,
+        "trial_end_date": 27,
+        "trial_start_date": 27
+      },
+      "row_count": 120,
+      "sha256": "80d86598c70a4d9c7c2eb32481d2569f69da27cfd772acec8c05156ff5b4becb",
+      "source_table": "raw__accounts"
+    },
+    {
+      "business_identifiers": [
+        "user_id",
+        "account_id"
+      ],
+      "column_types": {
+        "account_id": "VARCHAR",
+        "created_at": "TIMESTAMP",
+        "email": "VARCHAR",
+        "full_name": "VARCHAR",
+        "is_admin": "BOOLEAN",
+        "job_role": "VARCHAR",
+        "last_seen_at": "TIMESTAMP",
+        "locale": "VARCHAR",
+        "timezone": "VARCHAR",
+        "user_id": "VARCHAR",
+        "user_status": "VARCHAR"
+      },
+      "columns": [
+        "user_id",
+        "account_id",
+        "full_name",
+        "email",
+        "job_role",
+        "user_status",
+        "created_at",
+        "last_seen_at",
+        "timezone",
+        "locale",
+        "is_admin"
+      ],
+      "date_columns": [
+        "created_at",
+        "last_seen_at"
+      ],
+      "duplicate_identifier_rows": 0,
+      "file_size_bytes": 18492,
+      "filename": "raw__users.parquet",
+      "null_counts": {
+        "account_id": 3,
+        "created_at": 0,
+        "email": 0,
+        "full_name": 0,
+        "is_admin": 0,
+        "job_role": 10,
+        "last_seen_at": 15,
+        "locale": 0,
+        "timezone": 0,
+        "user_id": 0,
+        "user_status": 0
+      },
+      "row_count": 400,
+      "sha256": "73a9baf44bb5997c5b109c469ce1ed55f2d5d33f5108c91c02b18a314207f390",
+      "source_table": "raw__users"
+    },
+    {
+      "business_identifiers": [
+        "deal_id",
+        "account_id",
+        "owner_user_id"
+      ],
+      "column_types": {
+        "account_id": "VARCHAR",
+        "amount": "DOUBLE",
+        "closed_at": "TIMESTAMP",
+        "country_code": "VARCHAR",
+        "created_at": "TIMESTAMP",
+        "currency": "VARCHAR",
+        "current_stage_id": "VARCHAR",
+        "deal_id": "VARCHAR",
+        "last_stage_changed_at": "TIMESTAMP",
+        "owner_user_id": "VARCHAR",
+        "pipeline_id": "VARCHAR",
+        "source_system": "VARCHAR",
+        "status": "VARCHAR"
+      },
+      "columns": [
+        "deal_id",
+        "account_id",
+        "owner_user_id",
+        "pipeline_id",
+        "current_stage_id",
+        "status",
+        "created_at",
+        "closed_at",
+        "last_stage_changed_at",
+        "amount",
+        "currency",
+        "country_code",
+        "source_system"
+      ],
+      "date_columns": [
+        "created_at",
+        "closed_at",
+        "last_stage_changed_at"
+      ],
+      "duplicate_identifier_rows": 35,
+      "file_size_bytes": 203774,
+      "filename": "raw__deals.parquet",
+      "null_counts": {
+        "account_id": 0,
+        "amount": 227,
+        "closed_at": 4500,
+        "country_code": 0,
+        "created_at": 0,
+        "currency": 0,
+        "current_stage_id": 112,
+        "deal_id": 0,
+        "last_stage_changed_at": 0,
+        "owner_user_id": 0,
+        "pipeline_id": 0,
+        "source_system": 0,
+        "status": 0
+      },
+      "row_count": 6443,
+      "sha256": "eb8421b37594d337dc7b5fd463f4f8a500d8823be64094dbec1afea1d6c8bb0a",
+      "source_table": "raw__deals"
+    },
+    {
+      "business_identifiers": [
+        "event_id",
+        "user_id",
+        "account_id",
+        "deal_id"
+      ],
+      "column_types": {
+        "account_id": "VARCHAR",
+        "app_version": "VARCHAR",
+        "country_code": "VARCHAR",
+        "deal_id": "VARCHAR",
+        "device_type": "VARCHAR",
+        "event_date": "DATE",
+        "event_id": "VARCHAR",
+        "event_name": "VARCHAR",
+        "event_properties": "VARCHAR",
+        "event_timestamp": "TIMESTAMP",
+        "ingested_at": "TIMESTAMP",
+        "is_test_event": "BOOLEAN",
+        "platform": "VARCHAR",
+        "source_system": "VARCHAR",
+        "user_id": "VARCHAR"
+      },
+      "columns": [
+        "event_id",
+        "event_name",
+        "user_id",
+        "account_id",
+        "deal_id",
+        "event_timestamp",
+        "ingested_at",
+        "event_date",
+        "platform",
+        "device_type",
+        "app_version",
+        "country_code",
+        "event_properties",
+        "is_test_event",
+        "source_system"
+      ],
+      "date_columns": [
+        "event_timestamp",
+        "ingested_at",
+        "event_date"
+      ],
+      "duplicate_identifier_rows": 0,
+      "file_size_bytes": 3416046,
+      "filename": "raw__product_events.parquet",
+      "null_counts": {
+        "account_id": 653,
+        "app_version": 0,
+        "country_code": 0,
+        "deal_id": 24752,
+        "device_type": 0,
+        "event_date": 4941,
+        "event_id": 625,
+        "event_name": 0,
+        "event_properties": 0,
+        "event_timestamp": 0,
+        "ingested_at": 0,
+        "is_test_event": 0,
+        "platform": 0,
+        "source_system": 0,
+        "user_id": 1181
+      },
+      "row_count": 61747,
+      "sha256": "8f247c1127792ec9766dd710c0449368edc1edf211d24cc3dc34a4d8e1419738",
+      "source_table": "raw__product_events"
+    }
+  ]
+}

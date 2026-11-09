@@ -1,14 +1,10 @@
-import duckdb
-import os
+import sys
+from pathlib import Path
 
-con = duckdb.connect(
-    os.path.join(
-        os.path.dirname(__file__),
-        "..",
-        "..",
-        "product_analytics_light.db"
-    )
-)
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+from db_config import connect_duckdb
+
+con = connect_duckdb()
 
 con.execute("""
 CREATE OR REPLACE TABLE gold_dim_users AS
@@ -29,7 +25,9 @@ SELECT
     created_date        AS CreatedDate,
     last_seen_at        AS LastSeenAt,
 
+    is_future_created   AS IsFutureCreated,
     user_tenure_days    AS UserTenureDays,
+    account_tenure_days AS AccountTenureDays,
     days_since_last_seen AS DaysSinceLastSeen,
     recency_bucket      AS RecencyBucket
 

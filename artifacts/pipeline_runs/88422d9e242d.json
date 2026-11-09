@@ -1,0 +1,190 @@
+{
+  "run_id": "88422d9e242d",
+  "started_at": "2026-11-09T05:07:07.532401+00:00",
+  "ended_at": "2026-11-09T05:07:24.014609+00:00",
+  "status": "failed",
+  "database_path": "E:\\AI-ML ENGINEERING\\PORTFOLIO-PROJECTS\\PulseIQ\\artifacts\\ws13_final.duckdb",
+  "as_of_date": "2026-07-11",
+  "geography_mode": "derived-fixture",
+  "export_dir": "E:\\AI-ML ENGINEERING\\PORTFOLIO-PROJECTS\\PulseIQ\\artifacts\\ws13_export2",
+  "dry_run": false,
+  "stages": [
+    {
+      "stage_id": "validate_snapshot",
+      "status": "ok",
+      "duration_seconds": 0.44532410003012046,
+      "message": ""
+    },
+    {
+      "stage_id": "load_raw",
+      "status": "ok",
+      "duration_seconds": 0.9870902000111528,
+      "message": ""
+    },
+    {
+      "stage_id": "bronze_accounts",
+      "status": "ok",
+      "duration_seconds": 0.3156528000254184,
+      "message": ""
+    },
+    {
+      "stage_id": "bronze_users",
+      "status": "ok",
+      "duration_seconds": 0.43844260001787916,
+      "message": ""
+    },
+    {
+      "stage_id": "bronze_deals",
+      "status": "ok",
+      "duration_seconds": 0.46935889997985214,
+      "message": ""
+    },
+    {
+      "stage_id": "bronze_product_events",
+      "status": "ok",
+      "duration_seconds": 0.6775233999942429,
+      "message": ""
+    },
+    {
+      "stage_id": "geography",
+      "status": "ok",
+      "duration_seconds": 0.08559660002356395,
+      "message": ""
+    },
+    {
+      "stage_id": "silver_accounts",
+      "status": "ok",
+      "duration_seconds": 0.4842157000093721,
+      "message": ""
+    },
+    {
+      "stage_id": "silver_users",
+      "status": "ok",
+      "duration_seconds": 0.43466929998248816,
+      "message": ""
+    },
+    {
+      "stage_id": "silver_deals",
+      "status": "ok",
+      "duration_seconds": 0.46484279999276623,
+      "message": ""
+    },
+    {
+      "stage_id": "silver_product_events",
+      "status": "ok",
+      "duration_seconds": 1.572659700002987,
+      "message": ""
+    },
+    {
+      "stage_id": "gold_dim_accounts",
+      "status": "ok",
+      "duration_seconds": 0.5037500000325963,
+      "message": ""
+    },
+    {
+      "stage_id": "gold_dim_users",
+      "status": "ok",
+      "duration_seconds": 0.39132499997504056,
+      "message": ""
+    },
+    {
+      "stage_id": "gold_fact_deals",
+      "status": "ok",
+      "duration_seconds": 0.4817435000441037,
+      "message": ""
+    },
+    {
+      "stage_id": "gold_fact_product_events",
+      "status": "ok",
+      "duration_seconds": 1.1725990999839269,
+      "message": ""
+    },
+    {
+      "stage_id": "gold_fact_qualified_product_events",
+      "status": "ok",
+      "duration_seconds": 1.2642939999932423,
+      "message": ""
+    },
+    {
+      "stage_id": "gold_fact_engagement_periodic",
+      "status": "ok",
+      "duration_seconds": 0.4912525999825448,
+      "message": ""
+    },
+    {
+      "stage_id": "gold_fact_feature_adoption_account",
+      "status": "ok",
+      "duration_seconds": 0.5336307999677956,
+      "message": ""
+    },
+    {
+      "stage_id": "gold_fact_feature_adoption_user",
+      "status": "ok",
+      "duration_seconds": 0.41549680003663525,
+      "message": ""
+    },
+    {
+      "stage_id": "gold_fact_feature_adoption_by_period",
+      "status": "ok",
+      "duration_seconds": 0.4099948999937624,
+      "message": ""
+    },
+    {
+      "stage_id": "gold_fact_feature_breadth",
+      "status": "ok",
+      "duration_seconds": 0.4388802000321448,
+      "message": ""
+    },
+    {
+      "stage_id": "gold_fact_product_activity_recency",
+      "status": "ok",
+      "duration_seconds": 0.51374520000536,
+      "message": ""
+    },
+    {
+      "stage_id": "gold_fact_retention_cohort",
+      "status": "ok",
+      "duration_seconds": 0.39410490001318976,
+      "message": ""
+    },
+    {
+      "stage_id": "gold_fact_account_workflow_funnel",
+      "status": "ok",
+      "duration_seconds": 0.37548039999092,
+      "message": ""
+    },
+    {
+      "stage_id": "gold_fact_product_events_aggregated",
+      "status": "ok",
+      "duration_seconds": 1.2974321000510827,
+      "message": ""
+    },
+    {
+      "stage_id": "gold_fact_advanced_activation",
+      "status": "ok",
+      "duration_seconds": 0.5673581000301056,
+      "message": ""
+    },
+    {
+      "stage_id": "gold_fact_activation_as_of",
+      "status": "ok",
+      "duration_seconds": 0.4735071999602951,
+      "message": ""
+    },
+    {
+      "stage_id": "gold_fact_segment_product_metrics",
+      "status": "failed",
+      "duration_seconds": 0.3786477000103332,
+      "message": "Traceback (most recent call last):\n  File \"E:\\AI-ML ENGINEERING\\PORTFOLIO-PROJECTS\\PulseIQ\\sql\\gold\\gold_fact_segment_product_metrics.py\", line 12, in <module>\n    con.execute(\n    ~~~~~~~~~~~^\n        f\"\"\"\n        ^^^^\n    ...<53 lines>...\n    \"\"\"\n    ^^^\n    )\n    ^\n_duckdb.BinderException: Binder Error: Referenced table \"a\" not found!\nCandidate tables: \"act\"\n\nLINE 34:     SELECT a.AccountId, act.IsActivated, act.TimeToValueDays, seg.Segm...\n                    ^"
+    }
+  ],
+  "row_counts": {},
+  "dq": {},
+  "export_validation": {},
+  "failure": {
+    "stage": "gold_fact_segment_product_metrics",
+    "exit_code": 1,
+    "stderr": "Traceback (most recent call last):\n  File \"E:\\AI-ML ENGINEERING\\PORTFOLIO-PROJECTS\\PulseIQ\\sql\\gold\\gold_fact_segment_product_metrics.py\", line 12, in <module>\n    con.execute(\n    ~~~~~~~~~~~^\n        f\"\"\"\n        ^^^^\n    ...<53 lines>...\n    \"\"\"\n    ^^^\n    )\n    ^\n_duckdb.BinderException: Binder Error: Referenced table \"a\" not found!\nCandidate tables: \"act\"\n\nLINE 34:     SELECT a.AccountId, act.IsActivated, act.TimeToValueDays, seg.Segm...\n                    ^\n",
+    "stdout": ""
+  }
+}

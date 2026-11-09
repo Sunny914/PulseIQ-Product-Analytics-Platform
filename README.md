@@ -1,478 +1,134 @@
-# 🚀 SaaS Product Analytics Platform
+# PulseIQ — Synthetic B2B CRM product analytics
 
-> Built to simulate the analytics stack of a modern B2B SaaS company and demonstrate production-style data modeling, KPI engineering, product analytics workflows, and analytics engineering practices used by Product Analysts, Data Analysts, and Analytics Engineers.
+**One line:** Reproducible medallion pipeline + metric contracts + Gold product analytics + Power BI handoff for a **fictional** SaaS CRM portfolio.
 
----
-
-## 📌 Project Overview
-
-This project recreates the internal analytics platform of a SaaS CRM business similar to Salesforce, HubSpot, or Zoho CRM.
-
-The objective is to transform raw operational data into business-ready insights that can be consumed by Product, Sales, Growth, Customer Success, and Executive teams.
-
-Unlike traditional dashboard projects, this repository demonstrates the complete analytics lifecycle:
-
-- Data ingestion
-- Data cleaning and standardization
-- Data enrichment
-- Dimensional modeling
-- Fact table creation
-- KPI engineering
-- Product activation modeling
-- Dashboard-ready semantic layer creation
+> **Synthetic data only.** PulseIQ does not describe real customers, revenue, deployments, or experiment results. All KPIs are illustrative.
 
 ---
 
-## 🏗 Architecture
+## Problem and objective
 
-This project follows the **Medallion Architecture** approach:
+Show how a product analytics team turns raw product events into **defensible** activation, engagement, feature adoption, retention, funnel reach, and segmentation — with explicit data-quality and reporting-context rules recruiters can question in interviews.
+
+---
+
+## Key capabilities
+
+| Area | What is implemented |
+|------|---------------------|
+| Data engineering | Bronze → Silver → Gold (DuckDB), snapshot load, orchestrated `run_pipeline.py` |
+| Data quality | Contracts, validation, SOURCE_VERIFIED / ENRICHED / QUARANTINED |
+| Product metrics | DAU/WAU/MAU, adoption, breadth, exact-day D7/D14 retention, FR10 activation, descriptive funnel |
+| Chronology | Official analytics on `gold_fact_qualified_product_events` |
+| Contexts | **FULL_DATASET** vs **AS_OF 2026-07-11** (never mix without a slicer) |
+| Decision docs | Opportunities, PRDs, roadmap (WS-14) |
+| Portfolio (WS-15) | Case study, demo script, Power BI CSV manifest, measure catalog |
+
+---
+
+## Major findings (as-of 2026-07-11, official)
+
+| Theme | Result | Notes |
+|-------|--------|--------|
+| Feature adoption | Up to **15/15** account adopters on core features | Mature as-of cohort |
+| FR10 activation | **0 / 15** eligible as-of | Separate from engagement |
+| Full-dataset activation | **21 / 120 (17.5%)**, mean TTV **~9.9 days** | Not the as-of rate |
+| Account retention D7/D14 | **0 / 15** | Exact-day, not rolling |
+| User retention D7 | **2 / 56 (~3.6%)** | |
+| Funnel | High **deal** stage reach | Descriptive reach only |
+| Sample size | **16** accounts created by as-of date | Show on segment views |
+
+Details: [`docs/product_insights_and_recommendations.md`](docs/product_insights_and_recommendations.md) · Case study: [`docs/pulseiq_case_study.md`](docs/pulseiq_case_study.md)
+
+---
+
+## Dashboard status
+
+| Item | Status |
+|------|--------|
+| Validated `.pbix` / `.pbip` in repo | **No** — Power BI Desktop was not available to validate a report file |
+| Gold CSV exports + manifest | **Yes** — `artifacts/ws15_powerbi_exports/` |
+| Setup guide + DAX catalog | [`docs/powerbi_setup.md`](docs/powerbi_setup.md), [`docs/powerbi_measure_catalog.md`](docs/powerbi_measure_catalog.md) |
+| Parameterised M samples | [`powerbi/`](powerbi/) |
+
+Build the six-page report locally (Executive, Engagement, Adoption, Retention, Activation & workflow, Segments). Capture screenshots only from a real report — none are shipped as fake renders.
+
+**Demo script:** [`docs/demo_walkthrough.md`](docs/demo_walkthrough.md)
+
+---
+
+## Architecture
+
+Medallion pipeline in DuckDB; exports feed Power BI. Diagram source: [`docs/diagrams/pulseiq_architecture.mmd`](docs/diagrams/pulseiq_architecture.mmd).
 
 ```text
-Raw Data Sources
-        │
-        ▼
-┌──────────────────┐
-│ Bronze Layer     │
-│ Raw ingestion    │
-└──────────────────┘
-        │
-        ▼
-┌──────────────────┐
-│ Silver Layer     │
-│ Cleaning         │
-│ Validation       │
-│ Standardization  │
-│ Enrichment       │
-└──────────────────┘
-        │
-        ▼
-┌──────────────────┐
-│ Gold Layer       │
-│ Dimensions       │
-│ Facts            |
-| Measures         │
-│ KPIs             │
-│ Business Metrics │
-└──────────────────┘
-        │
-        ▼
-Power BI Dashboards
+Snapshots → Bronze → Silver → Gold → CSV + DuckDB → Power BI (import)
 ```
+
+Deep dive: [`docs/pipeline_architecture.md`](docs/pipeline_architecture.md) · [`docs/RUNBOOK.md`](docs/RUNBOOK.md)
 
 ---
 
-# 🛠 Tech Stack
+## Technology stack
 
-| Category | Technology |
-|----------|------------|
+| Layer | Tools |
+|-------|--------|
 | Database | DuckDB |
-| Query Engine | SQL |
-| Transformation | SQL + Python |
-| Analytics | Power BI |
-| Data Processing | Pandas |
-| Data Modeling | Star Schema |
-| Architecture | Medallion Architecture |
-| Version Control | Git + GitHub |
+| Transform | SQL + Python |
+| Tests | pytest |
+| BI | Power BI Desktop (local build) |
+| Docs | Markdown |
 
 ---
 
-# 📂 Repository Structure
+## Repository structure (high level)
 
-```text
-SaaS_Product_Analytics/
-│
-├── data/
-│
-├── sql/
-│   │
-│   ├── bronze/
-│   │   ├── bronze_accounts.py
-│   │   ├── bronze_users.py
-│   │   ├── bronze_deals.py
-│   │   ├── bronze_product_events.py
-│   │   └── bronze_geography.py
-│   │
-│   ├── silver/
-│   │   ├── silver_accounts.py
-│   │   ├── silver_users.py
-│   │   ├── silver_deals.py
-│   │   ├── silver_product_events.py
-│   │   └── silver_geography.py
-│   │
-│   └── gold/
-│       ├── gold_dim_accounts.py
-│       ├── gold_dim_users.py
-│       ├── gold_dim_geography.py
-│       ├── gold_fact_deals.py
-│       ├── gold_fact_product_events.py
-│       ├── gold_fact_product_events_aggregated.py
-│       └── gold_fact_advanced_activation.py
-│
-├── presentations/
-│
-├── assets/
-│
-├── product_analytics_light.db
-│
-└── README.md
+| Path | Purpose |
+|------|---------|
+| `data/source_snapshot/` | Versioned synthetic sources |
+| `sql/bronze`, `sql/silver`, `sql/gold` | Layer transforms |
+| `run_pipeline.py` | End-to-end orchestration |
+| `tests/` | Contracts and regression tests |
+| `docs/` | Metrics, audits, case study, Power BI docs |
+| `artifacts/` | Disposable DBs and WS-15 exports (not authoritative DB) |
+| `CHANGES.md` | Full workstream history WS-1–WS-15 |
+
+---
+
+## Setup and reproducibility
+
+```powershell
+pip install -r requirements.txt
+
+# Disposable DB + Power BI exports (does not touch product_analytics_light.db)
+python run_pipeline.py `
+  --db-path ".\artifacts\ws15_final.duckdb" `
+  --export-dir ".\artifacts\ws15_powerbi_exports" `
+  --as-of-date "2026-07-11" `
+  --geography-mode derived-fixture
+
+python scripts/generate_powerbi_export_manifest.py `
+  --export-dir ".\artifacts\ws15_powerbi_exports" `
+  --db-path ".\artifacts\ws15_final.duckdb"
+
+python -m pytest tests/ -q
 ```
 
----
-
-# 🏢 Business Scenario
-
-Assume a SaaS CRM company wants to answer questions such as:
-
-- Which acquisition channels generate the highest quality customers?
-- Which regions generate the highest revenue?
-- How long does it take customers to reach activation?
-- Which features drive customer adoption?
-- Which segments produce the largest deals?
-- What impacts customer conversion and retention?
-
-This analytics platform is designed to answer those questions.
+Metric definitions: [`docs/metrics.md`](docs/metrics.md), [`docs/metric_contracts.md`](docs/metric_contracts.md), [`docs/product_analytics_metric_specification.md`](docs/product_analytics_metric_specification.md)
 
 ---
 
-# ⭐ Medallion Layers
+## Limitations (read before interviewing)
 
-## 🥉 Bronze Layer
-
-Raw source data ingested directly into DuckDB without transformations.
-
-Examples:
-
-- Accounts
-- Users
-- Deals
-- Product Events
-- Geography
+- Synthetic CRM; no production or causal claims.
+- Pre-creation events excluded from **official** conclusions.
+- **FR10 activation ≠** general qualified engagement.
+- Retention is **exact-day** D7/D14 — not labelled as rolling retention.
+- Workflow funnel is **reach**, not sequential conversion.
+- As-of segment comparisons are **underpowered** (e.g. MID-MARKET **n = 2**).
 
 ---
 
-## 🥈 Silver Layer
+## Development status
 
-Business-ready cleaned tables containing:
-
-- Standardized text values
-- Date conversions
-- Derived fields
-- Data quality improvements
-- Enrichment joins
-
-Examples:
-
-- Account age calculation
-- Trial length calculation
-- User tenure calculation
-- Geographic enrichment
-
----
-
-## 🥇 Gold Layer
-
-Analytics-ready dimensional models optimized for BI reporting and stakeholder consumption.
-
-Contains:
-
-- Dimension tables
-- Fact tables
-- Business KPIs
-- Product metrics
-- Revenue metrics
-
----
-
-# 📊 Data Model
-
-## Dimension Tables
-
-### `gold_dim_accounts`
-
-Contains account-level business information.
-
-Features:
-
-- Industry
-- Segment
-- Employee Band
-- Acquisition Channel
-- Trial Information
-- Geography
-- Account Age Metrics
-
----
-
-### `gold_dim_users`
-
-Contains user-level attributes.
-
-Features:
-
-- User Role
-- User Status
-- User Tenure
-- Recency Bucket
-- Admin Flag
-
----
-
-### `gold_dim_geography`
-
-Contains geographical hierarchy information.
-
-Features:
-
-- Country
-- Region
-- Market
-- Sales Region
-- Currency
-
----
-
-## Fact Tables
-
-### `gold_fact_product_events`
-
-Stores all user interactions with the product.
-
-Examples:
-
-- Login events
-- Feature usage
-- Pipeline interactions
-- Deal interactions
-
----
-
-### `gold_fact_deals`
-
-Stores CRM pipeline activity.
-
-Metrics include:
-
-- Deal Value
-- Pipeline Stage
-- Deal Cycle Length
-- Win Status
-- Deal Age
-
----
-
-### `gold_fact_product_events_aggregated`
-
-Daily aggregation table for product analytics reporting.
-
-Used for:
-
-- DAU
-- Feature Adoption
-- Usage Trends
-- Event Tracking
-
----
-
-### `gold_fact_advanced_activation`
-
-Custom activation framework inspired by modern SaaS businesses.
-
-Activation requires:
-
-✅ Product engagement
-
-AND
-
-✅ Evidence of business workflow adoption
-
-Specifically:
-
-- Core product usage
-- Deal or pipeline activity
-
-This provides a far stronger activation signal than simple login activity.
-
----
-
-# 📈 KPIs and Metrics
-
-## Growth Metrics
-
-- New Accounts
-- New Users
-- Signup Growth Rate
-- Trial Conversion Rate
-
----
-
-## Product Metrics
-
-- DAU-Daily Active Users
-- WAU-Weekly Active Users
-- MAU-Monthly Active Users
-- Feature Adoption Rate
-- Engagement Rate
-
----
-
-## Revenue Metrics
-
-- Pipeline Value
-- Average Deal Size
-- Win Rate
-- Deal Velocity
-
----
-
-## Customer Metrics
-
-- Activation Rate
-- Time To Value
-- Customer Segmentation
-- Regional Distribution
-
----
-
-# 🧠 Advanced Analytics Concepts Demonstrated
-
-This project demonstrates knowledge of:
-
-- Medallion Architecture
-- Star Schema Design
-- Dimensional Modeling
-- Product Analytics
-- Behavioral Analytics
-- Activation Frameworks
-- Revenue Analytics
-- KPI Engineering
-- Analytics Engineering
-- Business Intelligence
-
----
-
-# 📊 Example Business Questions Answered
-
-## Product Team
-
-- Which features correlate with activation?
-- Which users become power users?
-
-## Sales Team
-
-- Which acquisition channels produce larger deals?
-- What is the average deal cycle duration?
-
-## Growth Team
-
-- Which segments activate fastest?
-- Which geographies convert best?
-
-## Leadership Team
-
-- What drives revenue growth?
-- Where should investment be focused?
-
----
-
-# 📷 Dashboard Preview
-
-## Executive Overview Dashboard
-
-![Executive Overview](presentations/Executive-Overview.jpg)
-
----
-
-## Product Adoption Dashboard
-
-![Product Usage Dashboard](presentations/Product-Usage-&-Adoption.jpg)
-
----
-
-## Activation Time-To-Value Analytics Dashboard
-
-![Activation Dashboard](presentations/Activation_&_Time-To-VAlue.jpg)
-
----
-
-## Activation Funnel Dashboard
-
-![Activation Funnel Dashboard](presentations/Activation_Funnel_&_Health_Monitoring.jpg)
----
-
-# 🎯 Skills Demonstrated
-
-## Data Analytics
-
-- SQL
-- Data Cleaning
-- Exploratory Data Analysis
-- KPI Design
-- Dashboard Development
-
----
-
-## Analytics Engineering
-
-- ETL Development
-- Data Transformation
-- Dimensional Modeling
-- Medallion Architecture
-
----
-
-## Product Analytics
-
-- Activation Metrics
-- Funnel Analysis
-- User Behavior Analysis
-- Event Analytics
-
----
-
-## Business Intelligence
-
-- Power BI
-- DAX
-- Executive Reporting
-- Stakeholder Communication
-
----
-
-# 🚀 Why This Project Matters
-
-Most analytics portfolios contain:
-
-- Superstore datasets
-- Basic dashboards
-- Simple visualizations
-
-This project goes significantly further by demonstrating the ability to:
-
-- Design analytics systems
-- Model business entities
-- Engineer KPIs
-- Build product metrics
-- Support executive decision making
-
-The workflow closely resembles the analytics infrastructure used inside modern SaaS companies.
-
----
-
-# 👨‍💻 Author
-
-**Sunny**
-
-Final Year Engineering Student  
-Aspiring Data Analyst | Product Analyst | Analytics Engineer
-
-Interested in:
-
-- Product Analytics
-- Data Analytics
-- Business Intelligence
-- Analytics Engineering
-- Data Engineering
-
----
-
-## ⭐ If you found this project useful, consider giving it a star.
+**WS-15 complete — PulseIQ development stops here.** Implementation log: [`CHANGES.md`](CHANGES.md).

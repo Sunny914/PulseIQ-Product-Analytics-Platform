@@ -1,0 +1,29 @@
+flowchart TB
+  subgraph sources [Source snapshots]
+    MANIFEST[MANIFEST.json]
+    ACC[accounts]
+    USR[users]
+    EVT[product_events]
+  end
+  subgraph pipeline [Python + SQL pipeline]
+    BR[Bronze]
+    SV[Silver]
+    GL[Gold facts and dims]
+    DQ[Data quality contracts]
+  end
+  subgraph outputs [WS-15 outputs]
+    DB[(ws15_final.duckdb)]
+    CSV[ws15_powerbi_exports]
+    MAN[POWERBI_EXPORT_MANIFEST.json]
+    PBI[Power BI Desktop handoff]
+  end
+  MANIFEST --> BR
+  ACC --> BR
+  USR --> BR
+  EVT --> BR
+  BR --> SV --> GL
+  DQ --> GL
+  GL --> DB
+  GL --> CSV
+  CSV --> MAN
+  CSV --> PBI

@@ -1,0 +1,21 @@
+{
+  "run_id": "fc332d4d6553",
+  "started_at": "2026-11-07T15:45:56.993833+00:00",
+  "ended_at": "2026-11-07T15:45:56.994728+00:00",
+  "status": "failed",
+  "database_path": "C:\\Users\\sunny\\AppData\\Local\\Temp\\pytest-of-sunny\\pytest-267\\test_geography_source_mode_req0\\t.duckdb",
+  "as_of_date": "2026-07-11",
+  "geography_mode": "source",
+  "export_dir": "C:\\Users\\sunny\\AppData\\Local\\Temp\\pytest-of-sunny\\pytest-267\\test_geography_source_mode_req0\\csv",
+  "dry_run": false,
+  "stages": [],
+  "row_counts": {},
+  "dq": {},
+  "export_validation": {},
+  "failure": {
+    "stage": "geography",
+    "errors": [
+      "Geography source missing: E:\\AI-ML ENGINEERING\\PORTFOLIO-PROJECTS\\PulseIQ\\sql\\data\\raw_geography.xlsx"
+    ]
+  }
+}
