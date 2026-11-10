@@ -4,7 +4,7 @@
 
 > **Synthetic data only.** PulseIQ does not describe real customers, revenue, deployments, or experiment results. All KPIs are illustrative.
 
-PulseIQ **began as a SaaS Product Analytics Platform** (medallion ETL, dimensional models, activation KPIs, BI-ready exports). It has **evolved on the same codebase** into an end-to-end **B2B SaaS Product Analytics & Product Decision Intelligence case study**: chronology-safe behavioural metrics, evidence-backed product insights, prioritised opportunities, requirement proposals, and portfolio documentation — without changing the original engineering focus on trustworthy SQL and reproducible pipelines.
+PulseIQ **began as a SaaS Product Analytics Platform** (medallion ETL, dimensional models, activation KPIs, BI-ready exports). On the **same codebase**, it evolved into a **B2B SaaS Product Analytics & Product Decision Intelligence** case study: chronology-safe behavioural metrics, evidence-backed product insights, prioritised opportunities, requirement proposals, and portfolio documentation — without changing the original engineering focus on trustworthy SQL and reproducible pipelines.
 
 **Repository:** [github.com/Sunny914/PulseIQ-Product-Analytics-Platform](https://github.com/Sunny914/PulseIQ-Product-Analytics-Platform)
 
@@ -19,7 +19,7 @@ PulseIQ **began as a SaaS Product Analytics Platform** (medallion ETL, dimension
 - [Analytical capabilities](#analytical-capabilities)
 - [Selected findings](#selected-findings)
 - [Product decision intelligence](#product-decision-intelligence)
-- [Power BI Dashboards & Visualizations](#power-bi-dashboards--visualizations)
+- [Power BI Dashboards & Visualizations](#power-bi-dashboards-visualizations)
 - [Documentation map](#documentation-map)
 - [Project evolution](#project-evolution)
 - [Technology stack](#technology-stack)
@@ -43,7 +43,7 @@ Show how a product analytics team turns raw product events into **defensible** a
 | Engineering | DuckDB medallion pipeline, `run_pipeline.py`, pytest contracts (**102 tests**) |
 | Analytics | Official metrics on chronology-qualified events; **FULL_DATASET** vs **AS_OF 2026-07-11** |
 | Product PM layer | Insights, opportunity backlog, PRD sketches, roadmap — **proposals only, no live experiments** |
-| Consumption | Gold CSV exports, Power BI setup docs, portfolio dashboard visuals (`presentations/`) |
+| Consumption | Gold CSV exports, Power BI setup docs, original dashboard visuals (`presentations/`) |
 
 ---
 
@@ -173,27 +173,27 @@ Documented artifacts:
 
 ## Power BI Dashboards & Visualizations
 
-Portfolio Power BI report pages for the synthetic CRM (synthetic data — not production KPIs). Screenshots below are the committed visuals in `presentations/`. Additional pages from the product analytics specification can be added to this section as new screenshots are exported.
+**Original platform dashboards** (synthetic CRM — not production KPIs). The four screenshots in `presentations/` are from the **early SaaS Product Analytics Platform** build (executive, adoption, activation, funnel views). They **do not** reflect the full WS-12/WS-13 models (chronology-qualified engagement, exact-day retention, descriptive workflow reach, segment rollups). Use Gold exports and the docs linked below for those metrics.
 
 ### Executive overview
 
-![Executive Overview](presentations/Executive-Overview.jpg)
+![PulseIQ executive overview — original platform dashboard](presentations/Executive-Overview.jpg)
 
 ### Product usage and adoption
 
-![Product Usage Dashboard](presentations/Product-Usage-&-Adoption.jpg)
+![PulseIQ product usage and adoption — original platform dashboard](presentations/Product-Usage-&-Adoption.jpg)
 
 ### Activation and time-to-value
 
-![Activation Dashboard](presentations/Activation_&_Time-To-VAlue.jpg)
+![PulseIQ activation and time-to-value — original platform dashboard](presentations/Activation_&_Time-To-VAlue.jpg)
 
 ### Activation funnel and health monitoring
 
-![Activation Funnel Dashboard](presentations/Activation_Funnel_&_Health_Monitoring.jpg)
+![PulseIQ activation funnel and health monitoring — original platform dashboard](presentations/Activation_Funnel_&_Health_Monitoring.jpg)
 
 ### Extended product analytics pages
 
-The case study and handoff specification also cover engagement, feature adoption, retention and cohorts, activation versus workflow reach, and segment insights. Reference layouts: [`docs/powerbi_setup.md`](docs/powerbi_setup.md) (page checklist) · [`docs/pulseiq_case_study.md`](docs/pulseiq_case_study.md).
+Add screenshots here when you publish a report wired to the WS-12/WS-13 Gold CSV handoff (engagement, adoption, retention, workflow reach, segments). Page checklist: [`docs/powerbi_setup.md`](docs/powerbi_setup.md) · narrative: [`docs/pulseiq_case_study.md`](docs/pulseiq_case_study.md).
 
 ### Data connection and setup
 

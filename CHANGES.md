@@ -932,4 +932,11 @@ Four image paths verified on disk and in Git; Markdown links re-checked. No code
 
 ---
 
-*Last updated: WS-15.2 README finalization.*
+### WS-15.3: README final polish and verification
+
+**Status:** Completed  
+**Scope:** `README.md` only — TOC anchor fix, original-vs-WS-12/13 screenshot framing, alt text; link and image path verification. No assets or code changes.
+
+---
+
+*Last updated: WS-15.3 README final polish.*
