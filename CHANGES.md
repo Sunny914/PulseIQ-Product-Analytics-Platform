@@ -887,10 +887,49 @@ No shipped PBIX; screenshots manual post-build; large artifacts under `artifacts
 
 ---
 
-## Future phases
+### WS-15.1: README audit & evolution update
 
-None planned — **PulseIQ complete after WS-15**.
+**Status:** Completed
+
+**Purpose**  
+Evolve the post–WS-15 README into the repository navigation hub: clarify **SaaS analytics platform → product analytics & decision intelligence case study** on one codebase; restore concise medallion and Gold model context; expose verified doc links; surface product management artifacts; tighten WS-15 Power BI **handoff vs validated report** wording.
+
+**Modified**  
+`README.md`, `CHANGES.md` (this entry only).
+
+**README sections revised**  
+Title and evolution narrative; table of contents; at-a-glance; architecture and Gold model index; split full-dataset vs as-of findings; product decision intelligence (P0–P2); documentation map; project evolution table; repository notes (pipeline safety, partial `exports/gold_csv`); limitations and development status; brief author line.
+
+**Sections preserved from prior README**  
+Synthetic disclosure; problem/objective; capabilities and findings (expanded, not replaced); Power BI handoff honesty; setup commands; core limitations; links to case study and demo.
+
+**Unsupported claims avoided**  
+No dashboard screenshots; no `.pbix`; no conducted experiments; no mixing of FULL_DATASET and AS_OF activation rates.
+
+**Validation**  
+Relative Markdown links checked against `docs/` and repo paths; metric figures cross-checked to `docs/metric_contracts.md`, `docs/product_insights_and_recommendations.md`, and `docs/chronology_integrity_audit.md`. **No** SQL, pipeline, test, or export changes.
 
 ---
 
-*Last updated: WS-15 final dashboard and portfolio packaging.*
+## Future phases
+
+None planned — **PulseIQ complete after WS-15** (README evolutions may append as WS-15.x).
+
+---
+
+### WS-15.2: README finalization (dashboard visuals & completed positioning)
+
+**Status:** Completed
+
+**Purpose**  
+Present PulseIQ as a **completed** case study; restore portfolio Power BI screenshots from `presentations/`; rename section to **Power BI Dashboards & Visualizations** with extensible subsections; reduce prominent WS-15 handoff-limitation wording; remove separate development-status section.
+
+**Modified**  
+`README.md`, `CHANGES.md` (this entry).
+
+**Validation**  
+Four image paths verified on disk and in Git; Markdown links re-checked. No code, data, or image binary changes.
+
+---
+
+*Last updated: WS-15.2 README finalization.*
